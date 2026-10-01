@@ -1,0 +1,60 @@
+# Handoff — umersyedahmed.com redesign demo
+
+This is a **demo redo** of [https://www.umersyedahmed.com/](https://www.umersyedahmed.com/). It replaces the old single-page layout with a new static site in this repository. It is meant to be shared and reviewed. It is not a production cutover.
+
+## Stack
+
+- Vite static site
+- Vanilla HTML, CSS, and JavaScript (no React, no backend)
+- Build output: `dist/`
+- Node is only needed to install and build. The deployed site is files on a CDN.
+- Netlify config: [`netlify.toml`](../netlify.toml) (`npm run build`, publish `dist`, Node 22)
+
+## Deploy notes
+
+Use a **new** Netlify site so the current production site keeps serving www.umersyedahmed.com.
+
+1. Netlify → Add new site → Import `umersyedahmed/umersyedahmed-com`.
+2. Build command: `npm run build`. Publish directory: `dist`. `netlify.toml` sets these if the UI would otherwise guess.
+3. Leave the production site and its domain attachment alone.
+4. Share the new `*.netlify.app` URL.
+
+Contact delivery is optional and build-time:
+
+| Variable | Effect |
+| --- | --- |
+| Neither set | Form validates, then tells the visitor to use LinkedIn or GitHub. Nothing is sent. |
+| `VITE_CONTACT_EMAIL` | Form opens the visitor’s email app with the note filled in. |
+| `VITE_FORMSPREE_FORM_ID` | Form POSTs to `https://formspree.io/f/<id>`. This wins if both are set. |
+
+Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names in Netlify → Environment variables, then rebuild. Vite inlines `VITE_*` values into the public JavaScript bundle. A Formspree form id is public. Do not put secrets in these variables.
+
+## Mock vs real
+
+| Piece | Status |
+| --- | --- |
+| Page design and copy | Written for this redesign. Not placeholder lorem, and not a copy of the old HTML5UP page. |
+| Services | Websites, apps and digital products, launch and hosting. Rewritten from the old Logo / Web Site / Launch and Deploy blocks. |
+| Selected work | Real public demos already linked from the live site, plus the matching public GitHub repos: Guess Number Game, Split Hovering Page, Expanding Cards. Described as small front-end studies, which is what they are. |
+| About | Carol Stream / Chicago, full stack, stable mobile-friendly sites and apps. |
+| Social links | The same public profiles as the live site: [LinkedIn](https://www.linkedin.com/in/umer-ahmed-9516611b7/), [GitHub](https://github.com/umersyedahmed), [Twitter](https://twitter.com/umersyedahmed). |
+| Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. |
+| Production site | Unchanged. This demo does not edit DNS, Namecheap, or the Netlify site that currently serves the domain. |
+
+## What this demo does not do
+
+Production DNS, Namecheap, and the existing Netlify site are out of scope. Pointing www.umersyedahmed.com at this redesign is a **separate** step and needs Umer’s explicit ask.
+
+## Ownership and cutover steps
+
+Do these only when someone asks. Merging the redesign PR updates `main` in this GitHub repo. That alone does not change the live domain.
+
+1. Review the pull request and merge it to `main` when the demo looks right.
+2. For a shareable preview, create a new Netlify site from this repo (steps above). Confirm the site name is new and that www.umersyedahmed.com is still on the old site.
+3. If the form should send mail, create a Formspree form or choose a real inbox, set the env var, and trigger a new deploy.
+4. When Umer explicitly asks to replace the live site:
+   - Add the custom domain to the **new** Netlify site.
+   - Update Namecheap DNS to the records Netlify shows for that site (or switch nameservers if that is the path Netlify recommends at the time).
+   - Wait for HTTPS, then check the homepage, project links, and contact form on a phone and a desktop.
+   - Keep the old Netlify site until the new one is confirmed, then unpublish or leave it unused.
+5. This GitHub repo is already under `umersyedahmed`. If it ever needs another owner: GitHub → Settings → General → Danger Zone → Transfer ownership. Add collaborators under Settings → Collaborators before a transfer if other people still need access.
