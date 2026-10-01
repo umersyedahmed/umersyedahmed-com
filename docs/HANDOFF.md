@@ -2,6 +2,12 @@
 
 This is a **demo redo** of [https://www.umersyedahmed.com/](https://www.umersyedahmed.com/). It replaces the old single-page layout with a new static site in this repository. It is meant to be shared and reviewed. It is not a production cutover.
 
+## Live preview
+
+**https://umersyedahmed-com-demo-umer.netlify.app**
+
+This is a demo Netlify site only — not the live domain, and there is no DNS cutover.
+
 ## Stack
 
 - Vite static site

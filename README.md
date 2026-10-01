@@ -4,6 +4,12 @@ A static redesign of [umersyedahmed.com](https://www.umersyedahmed.com/) for rev
 
 This repository does not change the live site. Production DNS, the current Netlify site, and Namecheap stay as they are until Umer explicitly asks for a cutover. See [docs/HANDOFF.md](docs/HANDOFF.md).
 
+## Live preview
+
+**https://umersyedahmed-com-demo-umer.netlify.app**
+
+This is a demo Netlify site only — not the live domain, and there is no DNS cutover.
+
 ## Run locally
 
 ```bash
