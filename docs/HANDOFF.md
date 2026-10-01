@@ -12,13 +12,18 @@ This is a demo Netlify site only — not the live domain, and there is no DNS cu
 
 Phillip-inspired CV and portfolio, recreated in original CSS. Warm ivory page, near-black type, copper italic accents, diamond section markers, a left nav, an about collage, an experience timeline, skill chips, a project card grid, and a dark contact panel. Hostinger’s sample actor copy and brand assets are not used.
 
-Placeholders still needed:
+Assets in `public/`:
 
-- A real headshot (the hero mark is initials)
-- Photos for the about collage (`public/placeholders/`)
+- `headshot.jpeg` — real photo in the hero and the about portrait
+- `about-cartoon.jpg` — illustration in the about collage, captioned as an illustration
+- `logo.jpg` — the existing site mark, used small in the footer and mobile header
+- `favicon.ico` — generated from that logo (the file supplied as favicon.ico was a Netlify 404 page, not an icon)
+
+Still open:
+
 - Confirmed experience entries (one timeline row is explicitly a placeholder, including any Empower Health role)
-- A real Empower Health, or other app, screenshot and URL
-- A CV PDF, then the Download CV button can be turned on
+- Project screenshots. The projects section is blank on purpose
+- A CV PDF. The download button is hidden until that file exists
 - Optional contact delivery via `.env.example`
 
 ## Stack
@@ -53,12 +58,12 @@ Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names 
 | Piece | Status |
 | --- | --- |
 | Page design | Original CSS in a Phillip-like CV rhythm. Not Hostinger template code, sample copy, or brand assets. |
-| About | Carol Stream / Chicago. Builds stable, mobile-friendly websites and apps. Collage images are placeholders. |
+| About | Carol Stream / Chicago. Builds stable, mobile-friendly websites and apps. Portrait is the real headshot. The second frame is an illustration. |
 | Experience | The independent web-developer row matches the public site. The second row is marked Placeholder and is not a verified job. |
 | Skills | HTML, CSS, JavaScript, responsive layout, Git, GitHub, Vite, Netlify, accessibility. |
-| Projects | Real public demos: Guess Number Game, Split Hovering Page, Expanding Cards, with their Netlify and GitHub links. Empower Health is a placeholder card with no URL. |
+| Projects | Blank until screenshots exist. No stand-in interface art. |
 | Social links | The same public profiles as the live site: [LinkedIn](https://www.linkedin.com/in/umer-ahmed-9516611b7/), [GitHub](https://github.com/umersyedahmed), [Twitter](https://twitter.com/umersyedahmed). |
-| Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. Download CV stays disabled until a PDF is added. |
+| Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. CV download is hidden until a PDF exists. |
 | Production site | Unchanged. This demo does not edit DNS, Namecheap, or the Netlify site that currently serves the domain. |
 
 ## What this demo does not do

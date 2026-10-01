@@ -57,6 +57,11 @@ img {
   display: block;
 }
 
+img.shot {
+  display: inline-block;
+  object-fit: cover;
+}
+
 :focus-visible {
   outline: 2px solid var(--copper);
   outline-offset: 3px;
@@ -780,10 +785,22 @@ textarea[aria-invalid="true"] {
 }
 
 .colophon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
   background: var(--dark);
   color: #cbbba8;
   text-align: center;
   padding: 0 1.5rem 2.4rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #fff;
 }
 
 body.on-dark .side-nav a,
@@ -840,9 +857,20 @@ body.on-dark .top-nav {
   }
 
   .top-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
     padding: 0.75rem 1.1rem 0;
     font-size: 0.95rem;
     font-weight: 650;
+  }
+
+  .top-brand img {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #fff;
   }
 
   .top-nav ul {
