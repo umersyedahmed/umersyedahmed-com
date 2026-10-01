@@ -6,7 +6,20 @@ This is a **demo redo** of [https://www.umersyedahmed.com/](https://www.umersyed
 
 **https://umersyedahmed-com-demo-umer.netlify.app**
 
-This is a demo Netlify site only — not the live domain, and there is no DNS cutover.
+This is a demo Netlify site only — not the live domain, and there is no DNS cutover. The preview still shows the previous design until this revision is redeployed.
+
+## Direction
+
+Phillip-inspired CV and portfolio, recreated in original CSS. Warm ivory page, near-black type, copper italic accents, diamond section markers, a left nav, an about collage, an experience timeline, skill chips, a project card grid, and a dark contact panel. Hostinger’s sample actor copy and brand assets are not used.
+
+Placeholders still needed:
+
+- A real headshot (the hero mark is initials)
+- Photos for the about collage (`public/placeholders/`)
+- Confirmed experience entries (one timeline row is explicitly a placeholder, including any Empower Health role)
+- A real Empower Health, or other app, screenshot and URL
+- A CV PDF, then the Download CV button can be turned on
+- Optional contact delivery via `.env.example`
 
 ## Stack
 
@@ -39,12 +52,13 @@ Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names 
 
 | Piece | Status |
 | --- | --- |
-| Page design and copy | Written for this redesign. Not placeholder lorem, and not a copy of the old HTML5UP page. |
-| Services | Websites, apps and digital products, launch and hosting. Rewritten from the old Logo / Web Site / Launch and Deploy blocks. |
-| Selected work | Real public demos already linked from the live site, plus the matching public GitHub repos: Guess Number Game, Split Hovering Page, Expanding Cards. Described as small front-end studies, which is what they are. |
-| About | Carol Stream / Chicago, full stack, stable mobile-friendly sites and apps. |
+| Page design | Original CSS in a Phillip-like CV rhythm. Not Hostinger template code, sample copy, or brand assets. |
+| About | Carol Stream / Chicago. Builds stable, mobile-friendly websites and apps. Collage images are placeholders. |
+| Experience | The independent web-developer row matches the public site. The second row is marked Placeholder and is not a verified job. |
+| Skills | HTML, CSS, JavaScript, responsive layout, Git, GitHub, Vite, Netlify, accessibility. |
+| Projects | Real public demos: Guess Number Game, Split Hovering Page, Expanding Cards, with their Netlify and GitHub links. Empower Health is a placeholder card with no URL. |
 | Social links | The same public profiles as the live site: [LinkedIn](https://www.linkedin.com/in/umer-ahmed-9516611b7/), [GitHub](https://github.com/umersyedahmed), [Twitter](https://twitter.com/umersyedahmed). |
-| Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. |
+| Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. Download CV stays disabled until a PDF is added. |
 | Production site | Unchanged. This demo does not edit DNS, Namecheap, or the Netlify site that currently serves the domain. |
 
 ## What this demo does not do

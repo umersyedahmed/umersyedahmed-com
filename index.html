@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Umer Ahmed is a full stack developer in Carol Stream, Illinois. He builds stable, mobile-friendly websites and apps, then helps launch them."
+      content="Umer Ahmed is a web developer in Carol Stream, Illinois. He builds websites, apps, and digital products, then helps launch them."
     />
-    <meta name="theme-color" content="#f4f0e7" />
-    <title>Umer Ahmed · Full Stack Developer</title>
+    <meta name="theme-color" content="#F5F1E9" />
+    <title>Umer Ahmed · Web developer</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script>
       document.documentElement.classList.add("js");
@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;1,9..144,500;1,9..144,560&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
       rel="stylesheet"
     />
     <script type="module" src="/src/main.js"></script>
@@ -24,144 +24,195 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <nav class="nav wrap" aria-label="Primary">
-        <a class="brand" href="#top">
-          <span class="brand-mark" aria-hidden="true">UA</span>
-          <span class="brand-name">Umer Ahmed</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-        >
-          <span class="nav-toggle-label">Menu</span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <nav class="side-nav" aria-label="Sections">
+      <ul>
+        <li><a class="section-link" href="#intro" aria-current="true">Intro</a></li>
+        <li><a class="section-link" href="#about">About</a></li>
+        <li><a class="section-link" href="#experience">Experience</a></li>
+        <li><a class="section-link" href="#skills">Skills</a></li>
+        <li><a class="section-link" href="#projects">Projects</a></li>
+        <li><a class="section-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <p class="meta-rail">Carol Stream, IL — Web developer — Sites · Apps</p>
+
+    <header class="top-nav">
+      <p class="top-brand">Umer Ahmed</p>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a class="section-link" href="#intro" aria-current="true">Intro</a></li>
+          <li><a class="section-link" href="#about">About</a></li>
+          <li><a class="section-link" href="#experience">Experience</a></li>
+          <li><a class="section-link" href="#skills">Skills</a></li>
+          <li><a class="section-link" href="#projects">Projects</a></li>
+          <li><a class="section-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main id="main">
-      <section id="top" class="hero">
-        <div class="wrap hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Full stack developer</p>
-            <h1>
-              Umer
-              <span>Ahmed</span>
-            </h1>
-            <p class="lede">
-              I build stable, mobile-friendly websites and apps for people who
-              need their work online and easy to use.
-            </p>
-            <p class="place">Carol Stream · Chicago, Illinois</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Start a project</a>
-              <a class="btn btn-ghost" href="#work">See selected work</a>
+      <section id="intro" class="hero">
+        <h1>
+          <span class="quote" aria-hidden="true">“</span>
+          I’m
+          <span class="shot shot-ua" aria-hidden="true"><span>UA</span></span>
+          <em>Umer</em>
+          <br />
+          a
+          <span class="shot shot-code" aria-hidden="true"></span>
+          web <em>developer</em>
+          <br />
+          who builds
+          <span class="shot shot-app" aria-hidden="true"></span>
+          sites &amp; <em>apps</em>
+          <span class="quote" aria-hidden="true">”</span>
+        </h1>
+        <p class="hero-links">
+          <span>Carol Stream, Illinois</span>
+          <a
+            href="https://www.linkedin.com/in/umer-ahmed-9516611b7/"
+            target="_blank"
+            rel="me noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/umersyedahmed"
+            target="_blank"
+            rel="me noopener noreferrer"
+            >GitHub</a
+          >
+        </p>
+      </section>
+
+      <section id="about" class="section">
+        <div class="sheet about-grid">
+          <div>
+            <h2 class="section-title">
+              <i class="mark" aria-hidden="true"></i>
+              <span>About <em>me</em></span>
+            </h2>
+            <div class="prose">
+              <p>
+                I build websites and apps for people who need their work online
+                and easy to use. I’m based in Carol Stream, just west of
+                Chicago.
+              </p>
+              <p>
+                Most of the value is in the quiet parts: a layout that holds on
+                a phone, a page that loads cleanly, and a launch that ends with
+                a link you can send.
+              </p>
             </div>
           </div>
-          <aside class="hero-card" aria-label="At a glance">
-            <p class="hero-card-kicker">At a glance</p>
-            <ul>
-              <li>
-                <span>Focus</span>
-                <strong>Sites, apps, and launch</strong>
-              </li>
-              <li>
-                <span>Approach</span>
-                <strong>Clear, stable, phone-first</strong>
-              </li>
-              <li>
-                <span>Based</span>
-                <strong>Greater Chicago</strong>
-              </li>
-            </ul>
-          </aside>
+          <div class="collage">
+            <figure class="frame frame-a">
+              <img
+                src="/placeholders/portrait.svg"
+                alt="Placeholder portrait. A headshot will replace this."
+                width="400"
+                height="520"
+              />
+              <figcaption>Placeholder</figcaption>
+            </figure>
+            <figure class="frame frame-b">
+              <img
+                src="/placeholders/desk.svg"
+                alt="Placeholder still of a desk and a screen. A photo will replace this."
+                width="400"
+                height="520"
+              />
+              <figcaption>Placeholder</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
-      <section id="services" class="section">
-        <div class="wrap">
-          <header class="section-head">
-            <p class="eyebrow">Services</p>
-            <h2>What I can build with you</h2>
-            <p>
-              Three ways I usually help, from a first layout to a public URL.
-              Tell me which one you need, or mix them.
-            </p>
-          </header>
-          <ol class="service-grid">
+      <section id="experience" class="section ruled">
+        <div class="sheet">
+          <h2 class="section-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Where I’ve <em>worked</em></span>
+          </h2>
+          <ol class="timeline">
             <li>
-              <article class="service-card">
-                <p class="index">01</p>
-                <h3>Websites</h3>
+              <p class="when"><i class="dot" aria-hidden="true"></i> Now</p>
+              <div class="role">
+                <h3>Web developer</h3>
+                <p class="org">Independent</p>
                 <p>
-                  Custom sites shaped around how a business actually works.
-                  Readable type, a clear path through the page, and layouts
-                  that stay comfortable on a phone.
+                  Websites, small apps, and help getting them live. The public
+                  site describes the same work: stable, mobile-friendly pages
+                  for people who need to share them.
                 </p>
-              </article>
+              </div>
             </li>
             <li>
-              <article class="service-card">
-                <p class="index">02</p>
-                <h3>Apps and digital products</h3>
+              <p class="when">
+                <i class="dot" aria-hidden="true"></i> Placeholder
+              </p>
+              <div class="role">
+                <p class="flag">Placeholder</p>
+                <h3>Software developer</h3>
+                <p class="org">Role to confirm</p>
                 <p>
-                  Small web apps and interactive pages — a focused tool, a
-                  product demo, or something people can use without a manual.
+                  Swap this row for a confirmed title, dates, and employer. A
+                  line for software work such as Empower Health can replace it.
+                  Nothing in this row is a verified job history.
                 </p>
-              </article>
-            </li>
-            <li>
-              <article class="service-card">
-                <p class="index">03</p>
-                <h3>Launch and hosting</h3>
-                <p>
-                  A finished build turned into a link you can share. I set up
-                  hosting, check the site on real screens, and hand it over
-                  ready to send.
-                </p>
-              </article>
+              </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <section id="work" class="section">
-        <div class="wrap">
-          <header class="section-head">
-            <p class="eyebrow">Selected work</p>
-            <h2>Three live studies</h2>
-            <p>
-              Early interactive pages, still online. A number game, a split
-              layout, and a row of panels that open as you choose them.
-            </p>
-          </header>
-          <ul class="work-grid">
+      <section id="skills" class="section ruled">
+        <div class="sheet">
+          <h2 class="section-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Skills I <em>use</em></span>
+          </h2>
+          <p class="lede">
+            The tools behind the sites and small apps. A longer list can
+            replace this once it’s confirmed.
+          </p>
+          <ul class="chips">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Responsive layout</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Vite</li>
+            <li>Netlify</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects" class="section ruled">
+        <div class="sheet">
+          <h2 class="section-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Selected <em>work</em></span>
+          </h2>
+          <p class="lede">
+            Three live studies from the current site, plus an open slot for a
+            product screen.
+          </p>
+          <ul class="project-grid">
             <li>
-              <article class="work-card">
-                <div class="shot shot-guess" aria-hidden="true">
-                  <span class="shot-label">01</span>
-                  <span class="mark">?</span>
+              <article class="project-card">
+                <div class="project-art art-guess" aria-hidden="true">
+                  <span>?</span>
                 </div>
-                <div class="work-body">
-                  <p class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                  </p>
+                <div class="project-body">
                   <h3>Guess Number Game</h3>
                   <p>
-                    A small browser game. Pick a number, read the hint, and
-                    try again until you land on it.
+                    A small browser game. Pick a number, read the hint, and try
+                    again.
                   </p>
-                  <p class="work-links">
+                  <p class="project-links">
                     <a
                       href="https://flamboyant-mcclintock-b76c01.netlify.app/"
                       target="_blank"
@@ -184,22 +235,18 @@
               </article>
             </li>
             <li>
-              <article class="work-card">
-                <div class="shot shot-split" aria-hidden="true">
+              <article class="project-card">
+                <div class="project-art art-split" aria-hidden="true">
                   <span>Play</span>
                   <span>Watch</span>
                 </div>
-                <div class="work-body">
-                  <p class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                  </p>
+                <div class="project-body">
                   <h3>Split Hovering Page</h3>
                   <p>
                     A full-viewport page split in two. Move between the sides
                     and the layout leans with you.
                   </p>
-                  <p class="work-links">
+                  <p class="project-links">
                     <a
                       href="https://trusting-hopper-c59149.netlify.app/"
                       target="_blank"
@@ -222,25 +269,17 @@
               </article>
             </li>
             <li>
-              <article class="work-card">
-                <div class="shot shot-cards" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
+              <article class="project-card">
+                <div class="project-art art-cards" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
                 </div>
-                <div class="work-body">
-                  <p class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                  </p>
+                <div class="project-body">
                   <h3>Expanding Cards</h3>
                   <p>
-                    A row of panels that widen as you select them, so a set of
-                    pictures can be browsed without leaving the page.
+                    Panels that widen as you select them, so a set of pictures
+                    can be browsed in place.
                   </p>
-                  <p class="work-links">
+                  <p class="project-links">
                     <a
                       href="https://dreamy-northcutt-ae38e1.netlify.app/"
                       target="_blank"
@@ -261,188 +300,145 @@
                 </div>
               </article>
             </li>
+            <li>
+              <article class="project-card is-placeholder">
+                <div class="project-art art-slot" aria-hidden="true">
+                  <img
+                    src="/placeholders/screen.svg"
+                    alt=""
+                    width="400"
+                    height="520"
+                  />
+                </div>
+                <div class="project-body">
+                  <p class="flag">Placeholder</p>
+                  <h3>Empower Health</h3>
+                  <p>
+                    A slot for a real app screenshot and URL. This card is not
+                    a live demo yet.
+                  </p>
+                </div>
+              </article>
+            </li>
           </ul>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <div class="wrap about-grid">
-          <div>
-            <header class="section-head">
-              <p class="eyebrow">About</p>
-              <h2>Stable on a phone, clear on a desk.</h2>
-            </header>
-            <div class="prose">
-              <p>
-                I’m a full stack developer in Carol Stream, just west of
-                Chicago. I build websites and apps that stay stable and feel
-                straightforward on a phone.
-              </p>
-              <p>
-                Most of the value is in the quiet parts: a page that loads
-                cleanly, a layout that holds together on a small screen, and a
-                launch that ends with a link you can actually send.
-              </p>
-            </div>
-          </div>
-          <dl class="facts">
-            <div>
-              <dt>Location</dt>
-              <dd>Carol Stream, Illinois</dd>
-            </div>
-            <div>
-              <dt>Work</dt>
-              <dd>Websites, apps, and launch</dd>
-            </div>
-            <div>
-              <dt>On the web</dt>
-              <dd>
-                <a
-                  href="https://github.com/umersyedahmed"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  >github.com/umersyedahmed</a
-                >
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
+      <section id="contact" class="contact">
+        <div class="contact-inner">
+          <h2 class="section-title center">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Let’s <em>talk</em></span>
+          </h2>
+          <p class="contact-lede" id="contact-mode">
+            Tell me what you want to ship. A site, a small app, or help getting
+            something live is enough to start. LinkedIn and GitHub are the
+            direct ways to reach me until an inbox is connected to this form.
+          </p>
 
-      <section id="contact" class="section">
-        <div class="wrap contact-grid">
-          <div>
-            <header class="section-head">
-              <p class="eyebrow">Contact</p>
-              <h2>Tell me what you want to ship.</h2>
-            </header>
-            <p class="prose" id="contact-mode">
-              A short note is enough — what you’re building, who it’s for, and
-              when you want it live. LinkedIn and GitHub are the direct ways
-              to reach me until an inbox is connected to this form.
+          <noscript>
+            <p class="noscript-note">
+              The message form needs JavaScript. LinkedIn, GitHub, and Twitter
+              below work without it.
             </p>
-            <ul class="social social-stack">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/umer-ahmed-9516611b7/"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  >LinkedIn</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/umersyedahmed"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/umersyedahmed"
-                  target="_blank"
-                  rel="me noopener noreferrer"
-                  >Twitter</a
-                >
-              </li>
-            </ul>
-          </div>
+          </noscript>
 
-          <div>
-            <noscript>
-              <p class="noscript-note">
-                The message form needs JavaScript. LinkedIn, GitHub, and
-                Twitter on this page work without it.
-              </p>
-            </noscript>
-            <form id="contact-form" class="contact-form" novalidate>
-              <div class="hp" aria-hidden="true">
-                <label for="company">Company</label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  tabindex="-1"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="field">
-                <label for="name">Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  required
-                  maxlength="120"
-                />
-                <p class="field-error" id="name-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  inputmode="email"
-                  required
-                  maxlength="160"
-                />
-                <p class="field-error" id="email-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  maxlength="2000"
-                ></textarea>
-                <p class="field-error" id="message-error" hidden></p>
-              </div>
-              <button class="btn btn-primary" type="submit">
-                Send message
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="hp" aria-hidden="true">
+              <label for="company">Company</label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                maxlength="120"
+              />
+              <p class="field-error" id="name-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+                maxlength="160"
+              />
+              <p class="field-error" id="email-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                maxlength="2000"
+              ></textarea>
+              <p class="field-error" id="message-error" hidden></p>
+            </div>
+            <div class="form-actions">
+              <button class="btn" type="submit">Send message</button>
+              <button
+                class="btn btn-ghost"
+                type="button"
+                disabled
+                aria-describedby="cv-note"
+              >
+                Download CV
               </button>
-              <p id="form-status" class="form-status" role="status"></p>
-            </form>
-          </div>
+            </div>
+            <p id="cv-note" class="cv-note">
+              The PDF isn’t in this demo yet, so download stays off.
+            </p>
+            <p id="form-status" class="form-status" role="status"></p>
+          </form>
+
+          <ul class="social">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/umer-ahmed-9516611b7/"
+                target="_blank"
+                rel="me noopener noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/umersyedahmed"
+                target="_blank"
+                rel="me noopener noreferrer"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/umersyedahmed"
+                target="_blank"
+                rel="me noopener noreferrer"
+                >Twitter</a
+              >
+            </li>
+          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="wrap footer-row">
-        <p>© <span data-year>2026</span> Umer Ahmed</p>
-        <ul class="social">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/umer-ahmed-9516611b7/"
-              target="_blank"
-              rel="me noopener noreferrer"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/umersyedahmed"
-              target="_blank"
-              rel="me noopener noreferrer"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/umersyedahmed"
-              target="_blank"
-              rel="me noopener noreferrer"
-              >Twitter</a
-            >
-          </li>
-        </ul>
-      </div>
+    <footer class="colophon">
+      <p>© <span data-year>2026</span> Umer Ahmed</p>
     </footer>
   </body>
 </html>

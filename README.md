@@ -1,6 +1,8 @@
 # Umer Ahmed — portfolio demo
 
-A static redesign of [umersyedahmed.com](https://www.umersyedahmed.com/) for review and sharing. It is a mobile-first personal site: navigation, hero, three services, three selected projects, about, and contact.
+A CV and portfolio for [Umer Ahmed](https://www.umersyedahmed.com/), built as an original page in the editorial spirit of a warm ivory personal site: a centered hero, a left section nav, and CV sections below. It is not Hostinger’s Phillip template, sample copy, or brand assets.
+
+The page is for a web developer in Carol Stream, Illinois: about, experience, skills, projects, and contact. Headshot, about stills, one experience row, the Empower Health card, and the CV download are placeholders until real assets arrive.
 
 This repository does not change the live site. Production DNS, the current Netlify site, and Namecheap stay as they are until Umer explicitly asks for a cutover. See [docs/HANDOFF.md](docs/HANDOFF.md).
 

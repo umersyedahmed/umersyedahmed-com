@@ -3,17 +3,13 @@ import "./style.css";
 const LINKEDIN = "https://www.linkedin.com/in/umer-ahmed-9516611b7/";
 const GITHUB = "https://github.com/umersyedahmed";
 
-document.documentElement.classList.add("js");
-
-const header = document.querySelector(".site-header");
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector("#nav-menu");
-const navLinks = [...navMenu.querySelectorAll('a[href^="#"]')];
 const year = document.querySelector("[data-year]");
 const form = document.querySelector("#contact-form");
 const status = document.querySelector("#form-status");
 const modeNote = document.querySelector("#contact-mode");
 const submitBtn = form.querySelector('button[type="submit"]');
+const contact = document.querySelector("#contact");
+const navLinks = [...document.querySelectorAll(".section-link")];
 
 const emailTo = (import.meta.env.VITE_CONTACT_EMAIL || "").trim();
 const formspreeId = (import.meta.env.VITE_FORMSPREE_FORM_ID || "").trim();
@@ -28,54 +24,44 @@ const contactMode = formspreeReady
 
 if (year) year.textContent = String(new Date().getFullYear());
 
-function setNavOpen(open) {
-  navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-  navMenu.classList.toggle("is-open", open);
-  document.body.classList.toggle("nav-open", open);
-}
-
-navToggle.addEventListener("click", () => {
-  setNavOpen(navToggle.getAttribute("aria-expanded") !== "true");
-});
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => setNavOpen(false));
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") setNavOpen(false);
-});
-
-const desktopNav = window.matchMedia("(min-width: 800px)");
-desktopNav.addEventListener("change", (event) => {
-  if (event.matches) setNavOpen(false);
-});
-
-function onScroll() {
-  header.classList.toggle("is-scrolled", window.scrollY > 8);
-}
-
-onScroll();
-window.addEventListener("scroll", onScroll, { passive: true });
-
-const sections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
+const sections = ["intro", "about", "experience", "skills", "projects", "contact"]
+  .map((id) => document.getElementById(id))
   .filter(Boolean);
+
+function setCurrent(id) {
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === `#${id}`) {
+      link.setAttribute("aria-current", "true");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach((link) => link.removeAttribute("aria-current"));
-        const current = navMenu.querySelector(`a[href="#${entry.target.id}"]`);
-        if (current) current.setAttribute("aria-current", "true");
+        if (entry.isIntersecting) setCurrent(entry.target.id);
       });
     },
-    { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+    { rootMargin: "-40% 0px -45% 0px", threshold: 0 },
   );
   sections.forEach((section) => observer.observe(section));
 }
+
+function syncTheme() {
+  if (!contact) return;
+  const rect = contact.getBoundingClientRect();
+  const coversNav =
+    rect.top < window.innerHeight * 0.62 && rect.bottom > window.innerHeight * 0.35;
+  const coversTop = rect.top < 72 && rect.bottom > 0;
+  document.body.classList.toggle("on-dark", coversNav || coversTop);
+}
+
+syncTheme();
+window.addEventListener("scroll", syncTheme, { passive: true });
+window.addEventListener("resize", syncTheme);
 
 if (contactMode === "formspree") {
   modeNote.textContent =
@@ -176,13 +162,10 @@ form.addEventListener("submit", async (event) => {
   const message = fields[2].value.trim();
 
   if (contactMode === "unconfigured") {
-    setStatus(
-      "This demo doesn’t deliver email yet. Reach Umer on",
-      [
-        { href: LINKEDIN, label: "LinkedIn" },
-        { href: GITHUB, label: "GitHub" },
-      ],
-    );
+    setStatus("This demo doesn’t deliver email yet. Reach Umer on", [
+      { href: LINKEDIN, label: "LinkedIn" },
+      { href: GITHUB, label: "GitHub" },
+    ]);
     return;
   }
 
@@ -220,10 +203,9 @@ form.addEventListener("submit", async (event) => {
     form.reset();
     setStatus("Message sent. I’ll reply by email.");
   } catch {
-    setStatus(
-      "The message didn’t go through. Try again, or reach me on",
-      [{ href: LINKEDIN, label: "LinkedIn" }],
-    );
+    setStatus("The message didn’t go through. Try again, or reach me on", [
+      { href: LINKEDIN, label: "LinkedIn" },
+    ]);
   } finally {
     submitBtn.disabled = false;
     form.removeAttribute("aria-busy");
