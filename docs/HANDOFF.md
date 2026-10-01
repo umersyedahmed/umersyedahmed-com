@@ -6,7 +6,7 @@ This is a **demo redo** of [https://www.umersyedahmed.com/](https://www.umersyed
 
 **https://umersyedahmed-com-demo-umer.netlify.app**
 
-This is a demo Netlify site only — not the live domain, and there is no DNS cutover. The preview still shows the previous design until this revision is redeployed.
+This is a demo Netlify site only — not the live domain, and there is no DNS cutover.
 
 ## Direction
 
