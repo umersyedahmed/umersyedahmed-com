@@ -59,8 +59,8 @@ Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names 
 | Piece | Status |
 | --- | --- |
 | Page design | Original CSS in a Phillip-like CV rhythm. Not Hostinger template code, sample copy, or brand assets. |
-| About | Resume summary: 4+ years with TypeScript, Angular, and Node.js, API work, and 7 years as a Lab Manager. Qissati is named as still in progress. Portrait is the real headshot. The second frame is an illustration. |
-| Experience | Empower Health Services, Full Stack Developer, July 2022–present, Aurora, IL. NICL LAB, Lab Manager, April 2015–July 2022, Willowbrook, IL. |
+| About | Resume summary: 4+ years with TypeScript, Angular, and Node.js, and API work. Qissati is named as still in progress. Portrait is the real headshot. The second frame is an illustration. |
+| Experience | Empower Health Services, Full Stack Developer, July 2022–present, Aurora, IL. |
 | Skills | The resume technology list, plus spoken languages: English, Urdu, and Modern Standard Arabic. |
 | Projects | No projects section. Qissati is the only project mentioned, in About, and it is marked in progress. |
 | Social links | Email `umersyedahmed@gmail.com`, [LinkedIn](https://www.linkedin.com/in/umersyedahmed), [GitHub](https://github.com/umersyedahmed). No phone number. |
