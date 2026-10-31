@@ -1,6 +1,6 @@
 import "./style.css";
 
-const LINKEDIN = "https://www.linkedin.com/in/umer-ahmed-9516611b7/";
+const LINKEDIN = "https://www.linkedin.com/in/umersyedahmed";
 const GITHUB = "https://github.com/umersyedahmed";
 
 const year = document.querySelector("[data-year]");
@@ -24,7 +24,7 @@ const contactMode = formspreeReady
 
 if (year) year.textContent = String(new Date().getFullYear());
 
-const sections = ["intro", "about", "experience", "skills", "projects", "contact"]
+const sections = ["intro", "about", "experience", "skills", "contact"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 

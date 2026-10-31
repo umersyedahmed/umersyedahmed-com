@@ -10,7 +10,7 @@ This is a demo Netlify site only — not the live domain, and there is no DNS cu
 
 ## Direction
 
-Phillip-inspired CV and portfolio, recreated in original CSS. Warm ivory page, near-black type, copper italic accents, diamond section markers, a left nav, an about collage, an experience timeline, skill chips, a project card grid, and a dark contact panel. Hostinger’s sample actor copy and brand assets are not used.
+Phillip-inspired CV, recreated in original CSS. Warm ivory page, near-black type, copper italic accents, diamond section markers, a left nav, an about collage, an experience timeline, skill chips, and a dark contact panel. Hostinger’s sample actor copy and brand assets are not used. There is no projects section.
 
 Assets in `public/`:
 
@@ -21,10 +21,11 @@ Assets in `public/`:
 
 Still open:
 
-- Confirmed experience entries (one timeline row is explicitly a placeholder, including any Empower Health role)
-- Project screenshots. The projects section is blank on purpose
 - A CV PDF. The download button is hidden until that file exists
 - Optional contact delivery via `.env.example`
+- Real project write-ups, when Umer wants them. Qissati is the only project named, and the page says it is still in progress
+
+The resume has no education section, so the page does not add one. The phone number on the resume is not on the public page.
 
 ## Stack
 
@@ -58,11 +59,11 @@ Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names 
 | Piece | Status |
 | --- | --- |
 | Page design | Original CSS in a Phillip-like CV rhythm. Not Hostinger template code, sample copy, or brand assets. |
-| About | Carol Stream / Chicago. Builds stable, mobile-friendly websites and apps. Portrait is the real headshot. The second frame is an illustration. |
-| Experience | The independent web-developer row matches the public site. The second row is marked Placeholder and is not a verified job. |
-| Skills | HTML, CSS, JavaScript, responsive layout, Git, GitHub, Vite, Netlify, accessibility. |
-| Projects | Blank until screenshots exist. No stand-in interface art. |
-| Social links | The same public profiles as the live site: [LinkedIn](https://www.linkedin.com/in/umer-ahmed-9516611b7/), [GitHub](https://github.com/umersyedahmed), [Twitter](https://twitter.com/umersyedahmed). |
+| About | Resume summary: 4+ years with TypeScript, Angular, and Node.js, API work, and 7 years as a Lab Manager. Qissati is named as still in progress. Portrait is the real headshot. The second frame is an illustration. |
+| Experience | Empower Health Services, Full Stack Developer, July 2022–present, Aurora, IL. NICL LAB, Lab Manager, April 2015–July 2022, Willowbrook, IL. |
+| Skills | The resume technology list, plus spoken languages: English, Urdu, and Modern Standard Arabic. |
+| Projects | No projects section. Qissati is the only project mentioned, in About, and it is marked in progress. |
+| Social links | Email `umersyedahmed@gmail.com`, [LinkedIn](https://www.linkedin.com/in/umersyedahmed), [GitHub](https://github.com/umersyedahmed). No phone number. |
 | Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. CV download is hidden until a PDF exists. |
 | Production site | Unchanged. This demo does not edit DNS, Namecheap, or the Netlify site that currently serves the domain. |
 
@@ -80,6 +81,6 @@ Do these only when someone asks. Merging the redesign PR updates `main` in this 
 4. When Umer explicitly asks to replace the live site:
    - Add the custom domain to the **new** Netlify site.
    - Update Namecheap DNS to the records Netlify shows for that site (or switch nameservers if that is the path Netlify recommends at the time).
-   - Wait for HTTPS, then check the homepage, project links, and contact form on a phone and a desktop.
+   - Wait for HTTPS, then check the homepage, section links, and contact form on a phone and a desktop.
    - Keep the old Netlify site until the new one is confirmed, then unpublish or leave it unused.
 5. This GitHub repo is already under `umersyedahmed`. If it ever needs another owner: GitHub → Settings → General → Danger Zone → Transfer ownership. Add collaborators under Settings → Collaborators before a transfer if other people still need access.
