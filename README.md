@@ -39,7 +39,7 @@ npm run preview
 
 [`netlify.toml`](netlify.toml) already sets both, plus Node 22. Create a **new** Netlify site from this repo if you want a shareable draft URL. Do not attach it to the existing production site as part of this demo.
 
-Optional contact settings are in [`.env.example`](.env.example). Copy that file to `.env` for local use, or set the same variable names in Netlify. Leave them empty and the contact form tells visitors to use LinkedIn or GitHub instead of pretending to send.
+The contact form posts to Netlify Forms and does not use environment variables. The email recipient is set in Netlify form notifications.
 
 ## Stack
 

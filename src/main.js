@@ -1,26 +1,13 @@
 import "./style.css";
 
 const LINKEDIN = "https://www.linkedin.com/in/umersyedahmed";
-const GITHUB = "https://github.com/umersyedahmed";
 
 const year = document.querySelector("[data-year]");
 const form = document.querySelector("#contact-form");
 const status = document.querySelector("#form-status");
-const modeNote = document.querySelector("#contact-mode");
 const submitBtn = form.querySelector('button[type="submit"]');
 const contact = document.querySelector("#contact");
 const navLinks = [...document.querySelectorAll(".section-link")];
-
-const emailTo = (import.meta.env.VITE_CONTACT_EMAIL || "").trim();
-const formspreeId = (import.meta.env.VITE_FORMSPREE_FORM_ID || "").trim();
-const emailReady = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTo);
-const formspreeReady = /^[a-zA-Z0-9]+$/.test(formspreeId);
-
-const contactMode = formspreeReady
-  ? "formspree"
-  : emailReady
-    ? "mailto"
-    : "unconfigured";
 
 if (year) year.textContent = String(new Date().getFullYear());
 
@@ -62,16 +49,6 @@ function syncTheme() {
 syncTheme();
 window.addEventListener("scroll", syncTheme, { passive: true });
 window.addEventListener("resize", syncTheme);
-
-if (contactMode === "formspree") {
-  modeNote.textContent =
-    "Send a note here and it comes straight to me. A few lines about the project is plenty.";
-  submitBtn.textContent = "Send message";
-} else if (contactMode === "mailto") {
-  modeNote.textContent =
-    "Sending opens your email app with this note filled in, ready for you to send.";
-  submitBtn.textContent = "Open email draft";
-}
 
 function setFieldError(input, message) {
   const error = document.getElementById(`${input.id}-error`);
@@ -157,51 +134,22 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  const name = fields[0].value.trim();
-  const email = fields[1].value.trim();
-  const message = fields[2].value.trim();
-
-  if (contactMode === "unconfigured") {
-    setStatus("This demo doesn’t deliver email yet. Reach Umer on", [
-      { href: LINKEDIN, label: "LinkedIn" },
-      { href: GITHUB, label: "GitHub" },
-    ]);
-    return;
-  }
-
-  if (contactMode === "mailto") {
-    const subject = `Project note from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    window.location.href = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus(
-      "Your email app should open with this note. If it doesn’t, send the same details on",
-      [{ href: LINKEDIN, label: "LinkedIn" }],
-    );
-    return;
-  }
-
   submitBtn.disabled = true;
   form.setAttribute("aria-busy", "true");
   try {
-    const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+    const response = await fetch("/", {
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-        _replyto: email,
-        _subject: `Portfolio note from ${name}`,
-      }),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
     });
-    if (!response.ok) {
-      throw new Error("Formspree rejected the message");
+    if (response.ok) {
+      form.reset();
+      setStatus("Message sent. I’ll reply by email.");
+    } else {
+      setStatus("The message didn’t go through. Try again, or reach me on", [
+        { href: LINKEDIN, label: "LinkedIn" },
+      ]);
     }
-    form.reset();
-    setStatus("Message sent. I’ll reply by email.");
   } catch {
     setStatus("The message didn’t go through. Try again, or reach me on", [
       { href: LINKEDIN, label: "LinkedIn" },

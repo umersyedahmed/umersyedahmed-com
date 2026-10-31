@@ -238,12 +238,22 @@
 
           <noscript>
             <p class="noscript-note">
-              The message form needs JavaScript. Email, LinkedIn, and GitHub
-              below work without it.
+              This form still sends without JavaScript. You’ll land on a short
+              confirmation page.
             </p>
           </noscript>
 
-          <form id="contact-form" class="contact-form" novalidate>
+          <form
+            id="contact-form"
+            class="contact-form"
+            name="contact"
+            method="POST"
+            action="/thanks"
+            data-netlify="true"
+            netlify-honeypot="company"
+            novalidate
+          >
+            <input type="hidden" name="form-name" value="contact" />
             <div class="hp" aria-hidden="true">
               <label for="company">Company</label>
               <input

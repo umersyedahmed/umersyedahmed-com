@@ -22,7 +22,6 @@ Assets in `public/`:
 Still open:
 
 - A CV PDF. The download button is hidden until that file exists
-- Optional contact delivery via `.env.example`
 - Real project write-ups, when Umer wants them. Qissati is the only project named, and the page says it is still in progress
 
 The resume has no education section, so the page does not add one. The phone number on the resume is not on the public page.
@@ -44,15 +43,11 @@ Use a **new** Netlify site so the current production site keeps serving www.umer
 3. Leave the production site and its domain attachment alone.
 4. Share the new `*.netlify.app` URL.
 
-Contact delivery is optional and build-time:
+Contact delivery uses Netlify Forms. The form is static HTML in `dist/index.html` (`name="contact"`, `method="POST"`, `data-netlify="true"`), because this site is deployed with `netlify deploy --dir=dist` and is not Git-connected. Netlify detects the form from that built file. No environment variables are required.
 
-| Variable | Effect |
-| --- | --- |
-| Neither set | Form validates, then tells the visitor to use LinkedIn or GitHub. Nothing is sent. |
-| `VITE_CONTACT_EMAIL` | Form opens the visitor’s email app with the note filled in. |
-| `VITE_FORMSPREE_FORM_ID` | Form POSTs to `https://formspree.io/f/<id>`. This wins if both are set. |
+The email recipient is set in Netlify form notifications: Project configuration → Forms → Form notifications. Add the address that should receive submissions there.
 
-Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names in Netlify → Environment variables, then rebuild. Vite inlines `VITE_*` values into the public JavaScript bundle. A Formspree form id is public. Do not put secrets in these variables.
+With JavaScript, the page posts `application/x-www-form-urlencoded` to `/` and shows a success or error line on the page. Without JavaScript, the form posts to `/thanks`.
 
 ## Mock vs real
 
@@ -64,7 +59,7 @@ Copy [`.env.example`](../.env.example) to `.env` locally, or set the same names 
 | Skills | The resume technology list, plus spoken languages: English, Urdu, and Modern Standard Arabic. |
 | Projects | No projects section. Qissati is the only project mentioned, in About, and it is marked in progress. |
 | Social links | Email `umersyedahmed@gmail.com`, [LinkedIn](https://www.linkedin.com/in/umersyedahmed), [GitHub](https://github.com/umersyedahmed). No phone number. |
-| Contact form | No fake backend and no `action="#"`. Delivery works only when an env var above is set. Otherwise the form says so and points at LinkedIn and GitHub. CV download is hidden until a PDF exists. |
+| Contact form | Netlify Forms. The built `dist/index.html` includes the form. The email recipient is set in Netlify form notifications. No env vars. CV download is hidden until a PDF exists. |
 | Production site | Unchanged. This demo does not edit DNS, Namecheap, or the Netlify site that currently serves the domain. |
 
 ## What this demo does not do
@@ -77,7 +72,7 @@ Do these only when someone asks. Merging the redesign PR updates `main` in this 
 
 1. Review the pull request and merge it to `main` when the demo looks right.
 2. For a shareable preview, create a new Netlify site from this repo (steps above). Confirm the site name is new and that www.umersyedahmed.com is still on the old site.
-3. If the form should send mail, create a Formspree form or choose a real inbox, set the env var, and trigger a new deploy.
+3. If the form should send mail, set the email recipient in Netlify form notifications (Project configuration → Forms → Form notifications).
 4. When Umer explicitly asks to replace the live site:
    - Add the custom domain to the **new** Netlify site.
    - Update Namecheap DNS to the records Netlify shows for that site (or switch nameservers if that is the path Netlify recommends at the time).
