@@ -11,7 +11,7 @@ const navLinks = [...document.querySelectorAll(".section-link")];
 
 if (year) year.textContent = String(new Date().getFullYear());
 
-const sections = ["intro", "about", "experience", "skills", "contact"]
+const sections = ["intro", "about", "experience", "skills", "plans", "contact"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 
@@ -158,4 +158,21 @@ form.addEventListener("submit", async (event) => {
     submitBtn.disabled = false;
     form.removeAttribute("aria-busy");
   }
+});
+
+function focusOpenCheckout() {
+  const screen = document.querySelector(".checkout-screen:target");
+  if (!screen) return;
+  const target = screen.querySelector("[data-focus]");
+  if (target) target.focus();
+}
+
+window.addEventListener("hashchange", focusOpenCheckout);
+focusOpenCheckout();
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (!document.querySelector(".checkout-screen:target")) return;
+  event.preventDefault();
+  location.hash = "#plans";
 });

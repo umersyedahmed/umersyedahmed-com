@@ -30,6 +30,7 @@
         <li><a class="section-link" href="#about">About</a></li>
         <li><a class="section-link" href="#experience">Experience</a></li>
         <li><a class="section-link" href="#skills">Skills</a></li>
+        <li><a class="section-link" href="#plans">Plans</a></li>
         <li><a class="section-link" href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -47,6 +48,7 @@
           <li><a class="section-link" href="#about">About</a></li>
           <li><a class="section-link" href="#experience">Experience</a></li>
           <li><a class="section-link" href="#skills">Skills</a></li>
+          <li><a class="section-link" href="#plans">Plans</a></li>
           <li><a class="section-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -226,6 +228,40 @@
         </div>
       </section>
 
+      <section id="plans" class="section ruled">
+        <div class="sheet">
+          <h2 class="section-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Web <em>development</em></span>
+          </h2>
+          <p class="demo-notice">
+            <strong>Demo</strong>
+            <span>This is a demo. Nothing will be charged.</span>
+          </p>
+          <p class="lede">Choose a plan to open a demo checkout.</p>
+          <ul class="plans">
+            <li class="plan">
+              <h3>Simpler web-development plan</h3>
+              <p class="price">$1,499</p>
+              <a class="btn btn-ink" href="#checkout-simpler">
+                Start demo checkout<span class="sr-only">
+                  for the simpler web-development plan</span
+                >
+              </a>
+            </li>
+            <li class="plan">
+              <h3>More advanced plan</h3>
+              <p class="price">$2,499</p>
+              <a class="btn btn-ink" href="#checkout-advanced">
+                Start demo checkout<span class="sr-only">
+                  for the more advanced plan</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section id="contact" class="contact">
         <div class="contact-inner">
           <h2 class="section-title center">
@@ -327,6 +363,126 @@
               >
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section
+        id="checkout-simpler"
+        class="checkout-screen"
+        tabindex="-1"
+        aria-labelledby="checkout-simpler-title"
+      >
+        <div class="checkout-card">
+          <p class="demo-notice" tabindex="-1" data-focus>
+            <strong>Demo</strong>
+            <span>This is a demo checkout. Nothing will be charged.</span>
+          </p>
+          <h2 class="checkout-title" id="checkout-simpler-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Demo <em>checkout</em></span>
+          </h2>
+          <dl class="summary">
+            <div>
+              <dt>Plan</dt>
+              <dd>Simpler web-development plan</dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd>$1,499</dd>
+            </div>
+          </dl>
+          <div class="checkout-actions">
+            <a class="btn btn-ink" href="#confirmed-simpler"
+              >Complete demo checkout</a
+            >
+            <a class="text-link" href="#plans">Back to plans</a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="checkout-advanced"
+        class="checkout-screen"
+        tabindex="-1"
+        aria-labelledby="checkout-advanced-title"
+      >
+        <div class="checkout-card">
+          <p class="demo-notice" tabindex="-1" data-focus>
+            <strong>Demo</strong>
+            <span>This is a demo checkout. Nothing will be charged.</span>
+          </p>
+          <h2 class="checkout-title" id="checkout-advanced-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Demo <em>checkout</em></span>
+          </h2>
+          <dl class="summary">
+            <div>
+              <dt>Plan</dt>
+              <dd>More advanced plan</dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd>$2,499</dd>
+            </div>
+          </dl>
+          <div class="checkout-actions">
+            <a class="btn btn-ink" href="#confirmed-advanced"
+              >Complete demo checkout</a
+            >
+            <a class="text-link" href="#plans">Back to plans</a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="confirmed-simpler"
+        class="checkout-screen"
+        tabindex="-1"
+        aria-labelledby="confirmed-simpler-title"
+      >
+        <div class="checkout-card">
+          <p class="demo-notice" tabindex="-1" data-focus>
+            <strong>Demo</strong>
+            <span
+              >This is a demo. Nothing was charged and no real order was
+              placed.</span
+            >
+          </p>
+          <h2 class="checkout-title" id="confirmed-simpler-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Demo <em>confirmation</em></span>
+          </h2>
+          <p class="confirm-copy">
+            This is a demo. Nothing was charged and no real order was placed.
+          </p>
+          <p class="checkout-echo">Simpler web-development plan · $1,499</p>
+          <a class="btn btn-ink" href="#plans">Back to plans</a>
+        </div>
+      </section>
+
+      <section
+        id="confirmed-advanced"
+        class="checkout-screen"
+        tabindex="-1"
+        aria-labelledby="confirmed-advanced-title"
+      >
+        <div class="checkout-card">
+          <p class="demo-notice" tabindex="-1" data-focus>
+            <strong>Demo</strong>
+            <span
+              >This is a demo. Nothing was charged and no real order was
+              placed.</span
+            >
+          </p>
+          <h2 class="checkout-title" id="confirmed-advanced-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Demo <em>confirmation</em></span>
+          </h2>
+          <p class="confirm-copy">
+            This is a demo. Nothing was charged and no real order was placed.
+          </p>
+          <p class="checkout-echo">More advanced plan · $2,499</p>
+          <a class="btn btn-ink" href="#plans">Back to plans</a>
         </div>
       </section>
     </main>
