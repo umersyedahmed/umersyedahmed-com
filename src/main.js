@@ -208,6 +208,10 @@ const CHECKOUT_MODE = resolveCheckoutMode();
 
 function applyCheckoutMode() {
   if (CHECKOUT_MODE === "demo") return;
+  document.querySelectorAll("[data-checkout-cta]").forEach((el) => {
+    el.textContent =
+      CHECKOUT_MODE === "test" ? "Start test checkout" : "Start checkout";
+  });
   document.querySelectorAll(".demo-only").forEach((el) => {
     el.hidden = true;
   });
@@ -360,7 +364,7 @@ function showDemoStep(step) {
   const note = document.createElement("span");
   note.className = "sr-only";
   if (CHECKOUT_MODE === "test") {
-    note.textContent = " Test mode. No real card is charged.";
+    note.textContent = " Test checkout. No real charges.";
   } else if (CHECKOUT_MODE === "live") {
     note.textContent = " Payment is handled by our payment provider.";
   } else {

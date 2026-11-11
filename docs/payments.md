@@ -13,9 +13,9 @@ Make the links in the provider’s test or sandbox environment first. Each link 
 - Simpler plan deposit: **$499.50** (50% of $999)
 - More advanced plan deposit: **$999.50** (50% of $1,999)
 
-After payment, send the buyer to `https://<site>/checkout/success`. If the provider asks for a cancel URL, use `https://<site>/checkout/cancel`. Netlify serves `checkout/success.html` and `checkout/cancel.html` at those paths.
+After payment, send the buyer to `https://<site>/checkout/success?plan=simpler` or `https://<site>/checkout/success?plan=advanced`. If the provider asks for a cancel URL, use `https://<site>/checkout/cancel`. Netlify serves `checkout/success.html` and `checkout/cancel.html` at those paths.
 
-**Stripe.** In the Dashboard, turn on Test mode. Create two Payment Links for the amounts above. Set the after-payment redirect to the success URL. If you use a Checkout Session instead, set `success_url` and `cancel_url` to those same paths. Test-mode link URLs look like `https://buy.stripe.com/...`. The remaining 50% is a Stripe Invoice when the site is ready to launch.
+**Stripe.** In the Dashboard, turn on Test mode. Create two Payment Links for the amounts above. Set the Simpler link’s after-payment redirect to `https://<site>/checkout/success?plan=simpler` and the More advanced link’s to `https://<site>/checkout/success?plan=advanced`. If you use a Checkout Session instead, use those as `success_url` and set `cancel_url` to `https://<site>/checkout/cancel`. Test-mode link URLs look like `https://buy.stripe.com/...`. The remaining 50% is a Stripe Invoice when the site is ready to launch.
 
 **Square.** In the Square Dashboard sandbox, create two payment links for the same amounts. Copy the hosted URLs (`https://square.link/...` or `https://checkout.square.site/...`). Point the link’s confirmation or redirect to the success URL when Square offers that setting. The remaining 50% is a Square invoice when the site is ready to launch.
 

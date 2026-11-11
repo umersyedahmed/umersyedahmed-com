@@ -240,10 +240,7 @@
           </p>
           <p class="demo-notice test-notice" hidden>
             <strong>Test</strong>
-            <span
-              >Test mode: payments use the provider’s test environment. No real
-              card is charged. Use your provider’s test card.</span
-            >
+            <span>Test checkout. No real charges. Use Stripe's test card.</span>
           </p>
           <p class="lede">
             Two fixed-price plans for a small-business or portfolio site.
@@ -273,7 +270,7 @@
                 <li>30 days of support after launch</li>
               </ul>
               <button type="button" class="btn btn-ink" data-open-plan="simpler">
-                Start demo checkout
+                <span data-checkout-cta>Start demo checkout</span>
                 <span class="sr-only">for the Simpler web-development plan</span>
               </button>
             </li>
@@ -302,7 +299,7 @@
                 <li>60 days of support after launch</li>
               </ul>
               <button type="button" class="btn btn-ink" data-open-plan="advanced">
-                Start demo checkout
+                <span data-checkout-cta>Start demo checkout</span>
                 <span class="sr-only">for the More advanced plan</span>
               </button>
             </li>
@@ -442,16 +439,18 @@
             <p>
               Simpler takes less than 2 weeks. More advanced takes less than 4 weeks.
               The clock starts once the deposit is paid and your text, logo and
-              photos are in. Slow feedback moves the date. This demo button
-              does not start the clock.
+              photos are in. Slow feedback moves the date.
+              <span class="demo-only">This demo button does not start the clock.</span>
+              <span class="test-notice" hidden>This test checkout does not start the clock.</span>
             </p>
             <ol class="steps">
               <li>
                 <h4>Brief</h4>
                 <p>
                   You would share what you do, who the site is for, and which
-                  pages you have in mind. The clock would not start from this
-                  demo button.
+                  pages you have in mind.
+                  <span class="demo-only">The clock would not start from this demo button.</span>
+                  <span class="test-notice" hidden>The clock would not start from this test checkout.</span>
                 </p>
               </li>
               <li>
@@ -578,7 +577,12 @@
                 <p>
                   50% deposit to book the start date, 50% at launch, before the
                   site goes live on your domain. The total is the same either
-                  way. This demo collects no payment.
+                  way.
+                  <span class="demo-only">This demo collects no payment.</span>
+                  <span class="test-notice" hidden
+                    >This is a test checkout. No real charges happen. Use
+                    Stripe's test card.</span
+                  >
                 </p>
               </details>
               <details>
@@ -610,24 +614,45 @@
                   starts, the deposit covers the work done and is not refunded,
                   nothing more is owed, and you get the work done so far. If I
                   cannot deliver the agreed scope, you get a full refund. No
-                  refunds after launch and sign-off. This demo places no order
-                  and charges nothing, so no refund applies.
+                  refunds after launch and sign-off.
+                  <span class="demo-only"
+                    >This demo places no order and charges nothing, so no refund
+                    applies.</span
+                  >
+                  <span class="test-notice" hidden
+                    >This is a test checkout. No real charges happen. Use
+                    Stripe's test card.</span
+                  >
                 </p>
               </details>
               <details>
                 <summary>How do I start?</summary>
                 <p>
-                  Choose a plan and open the demo checkout. You can switch
-                  plans, fill a brief, and review it. Nothing is charged, and
-                  the brief is not sent. For a real conversation, use the
-                  contact form below.
+                  <span class="demo-only"
+                    >Choose a plan and open the demo checkout. You can switch
+                    plans, fill a brief, and review it. Nothing is charged, and
+                    the brief is not sent.</span
+                  >
+                  <span class="test-notice" hidden
+                    >Choose a plan and open the test checkout. You can switch
+                    plans, fill a brief, and review it. This is a test checkout.
+                    No real charges happen. Use Stripe's test card. The brief is
+                    not sent.</span
+                  >
+                  For a real conversation, use the contact form below.
                 </p>
               </details>
               <details>
                 <summary>Is this checkout a real purchase?</summary>
                 <p>
-                  No. This is a demo. Nothing will be charged. No real order is
-                  placed, and nothing is stored or sent.
+                  <span class="demo-only"
+                    >No. This is a demo. Nothing will be charged. No real order
+                    is placed, and nothing is stored or sent.</span
+                  >
+                  <span class="test-notice" hidden
+                    >This is a test checkout. No real charges happen. Use
+                    Stripe's test card.</span
+                  >
                 </p>
               </details>
             </div>
@@ -641,10 +666,7 @@
             </p>
             <p class="demo-notice test-notice" hidden>
               <strong>Test</strong>
-              <span
-                >Test mode: payments use the provider’s test environment. No
-                real card is charged. Use your provider’s test card.</span
-              >
+              <span>Test checkout. No real charges. Use Stripe's test card.</span>
             </p>
             <p>
               I have 4+ years of experience building web applications.
@@ -810,10 +832,7 @@
           </p>
           <p class="demo-notice test-notice" id="checkout-test-notice" hidden>
             <strong>Test</strong>
-            <span
-              >Test mode: payments use the provider’s test environment. No real
-              card is charged. Use your provider’s test card.</span
-            >
+            <span>Test checkout. No real charges. Use Stripe's test card.</span>
           </p>
           <div class="checkout-head-row">
             <h2 class="checkout-title" id="demo-checkout-title" tabindex="-1">
@@ -977,6 +996,9 @@
           <p class="checkout-lead demo-only">
             This is a demo. Nothing will be charged.
           </p>
+          <p class="checkout-lead test-notice" hidden>
+            Test checkout. No real charges. Use Stripe's test card.
+          </p>
           <dl class="summary">
             <div>
               <dt>Plan</dt>
@@ -996,6 +1018,10 @@
             launch, before the site goes live on your domain. The total is the
             same either way.
             <span class="demo-only">This demo collects no payment.</span>
+            <span class="test-notice" hidden
+              >You pay a 50% test deposit now. The remaining 50% would be
+              invoiced at launch. No real charges happen.</span
+            >
           </p>
           <p class="checkout-lead" id="live-pay-note" hidden>
             You pay 50% now to book your start date. The remaining 50% is

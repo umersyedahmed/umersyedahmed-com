@@ -47,11 +47,30 @@
     <main>
       <h1>Deposit received</h1>
       <p>Thanks. Your deposit is in.</p>
+      <p id="plan-line" hidden></p>
+      <p id="test-success-note" hidden>
+        This was a test checkout. No real charges happened.
+      </p>
       <p>
         I’ll email within 1 business day to schedule the kickoff. The remaining
         50% is invoiced at launch.
       </p>
       <p><a href="/#plans">Back to plans</a></p>
     </main>
+    <script type="module">
+      const plan = new URLSearchParams(location.search).get("plan");
+      const key = (plan || "").toLowerCase();
+      const line = document.getElementById("plan-line");
+      if (key === "simple" || key === "simpler") {
+        line.textContent = "Simpler web-development plan · 50% deposit";
+        line.hidden = false;
+      } else if (key === "advanced") {
+        line.textContent = "More advanced plan · 50% deposit";
+        line.hidden = false;
+      }
+      if (import.meta.env.VITE_CHECKOUT_MODE === "test") {
+        document.getElementById("test-success-note").hidden = false;
+      }
+    </script>
   </body>
 </html>
