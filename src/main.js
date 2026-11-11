@@ -162,8 +162,8 @@ form.addEventListener("submit", async (event) => {
 
 const demoCheckout = document.querySelector("#demo-checkout");
 const PLAN_COPY = {
-  simpler: { name: "Simpler web-development plan", price: "$1,499" },
-  advanced: { name: "More advanced plan", price: "$2,499" },
+  simpler: { name: "Simpler web-development plan", price: "$1,199" },
+  advanced: { name: "More advanced plan", price: "$2,299" },
 };
 const STEP_ORDER = ["plan", "brief", "review", "done"];
 const BRIEF_FIELDS = [
@@ -239,6 +239,9 @@ function syncPlanUI() {
   });
   const plus = document.getElementById("demo-plus");
   if (plus) plus.hidden = demoPlan !== "advanced";
+  demoCheckout.querySelectorAll("[data-inclusions]").forEach((list) => {
+    list.hidden = list.getAttribute("data-inclusions") !== demoPlan;
+  });
   const reviewPlan = document.getElementById("demo-review-plan");
   const reviewPrice = document.getElementById("demo-review-price");
   const reviewTotal = document.getElementById("demo-review-total");
