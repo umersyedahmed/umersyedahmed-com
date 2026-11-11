@@ -162,8 +162,8 @@ form.addEventListener("submit", async (event) => {
 
 const demoCheckout = document.querySelector("#demo-checkout");
 const PLAN_COPY = {
-  simpler: { name: "Simpler web-development plan", price: "$1,199" },
-  advanced: { name: "More advanced plan", price: "$2,299" },
+  simpler: { name: "Simpler web-development plan", price: "$999" },
+  advanced: { name: "More advanced plan", price: "$1,999" },
 };
 const STEP_ORDER = ["plan", "brief", "review", "done"];
 const BRIEF_FIELDS = [
