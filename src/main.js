@@ -162,9 +162,67 @@ form.addEventListener("submit", async (event) => {
 
 const demoCheckout = document.querySelector("#demo-checkout");
 const PLAN_COPY = {
-  simpler: { name: "Simpler web-development plan", price: "$999" },
-  advanced: { name: "More advanced plan", price: "$1,999" },
+  simpler: {
+    name: "Simpler web-development plan",
+    price: "$999",
+    deposit: "$499.50",
+  },
+  advanced: {
+    name: "More advanced plan",
+    price: "$1,999",
+    deposit: "$999.50",
+  },
 };
+const CHECKOUT_HOSTS = [
+  "buy.stripe.com",
+  "checkout.stripe.com",
+  "square.link",
+  "checkout.square.site",
+];
+
+function allowedCheckoutUrl(value) {
+  if (!value || typeof value !== "string") return "";
+  try {
+    const url = new URL(value.trim());
+    if (url.protocol !== "https:") return "";
+    if (!CHECKOUT_HOSTS.includes(url.hostname)) return "";
+    return url.toString();
+  } catch {
+    return "";
+  }
+}
+
+const CHECKOUT_URLS = {
+  simpler: allowedCheckoutUrl(import.meta.env.VITE_CHECKOUT_URL_SIMPLER_DEPOSIT),
+  advanced: allowedCheckoutUrl(import.meta.env.VITE_CHECKOUT_URL_ADVANCED_DEPOSIT),
+};
+
+function resolveCheckoutMode() {
+  const requested = import.meta.env.VITE_CHECKOUT_MODE;
+  if (requested !== "test" && requested !== "live") return "demo";
+  if (!CHECKOUT_URLS.simpler || !CHECKOUT_URLS.advanced) return "demo";
+  return requested;
+}
+
+const CHECKOUT_MODE = resolveCheckoutMode();
+
+function applyCheckoutMode() {
+  if (CHECKOUT_MODE === "demo") return;
+  document.querySelectorAll(".demo-only").forEach((el) => {
+    el.hidden = true;
+  });
+  if (CHECKOUT_MODE === "test") {
+    document.querySelectorAll(".test-notice").forEach((el) => {
+      el.hidden = false;
+    });
+  }
+  const liveNote = document.getElementById("live-pay-note");
+  if (liveNote) liveNote.hidden = CHECKOUT_MODE !== "live";
+  const briefNote = document.getElementById("brief-checkout-note");
+  if (briefNote) briefNote.hidden = false;
+}
+
+applyCheckoutMode();
 const STEP_ORDER = ["plan", "brief", "review", "done"];
 const BRIEF_FIELDS = [
   ["demo-name", "Name"],
@@ -248,6 +306,17 @@ function syncPlanUI() {
   if (reviewPlan) reviewPlan.textContent = plan.name;
   if (reviewPrice) reviewPrice.textContent = plan.price;
   if (reviewTotal) reviewTotal.textContent = plan.price;
+  const totalLabel = document.getElementById("demo-total-label");
+  if (totalLabel) totalLabel.textContent = CHECKOUT_MODE === "demo" ? "Demo total" : "Total";
+  const complete = document.getElementById("demo-complete");
+  if (!complete) return;
+  if (CHECKOUT_MODE === "test") {
+    complete.textContent = `Pay ${plan.deposit} deposit (test)`;
+  } else if (CHECKOUT_MODE === "live") {
+    complete.textContent = `Pay ${plan.deposit} deposit`;
+  } else {
+    complete.textContent = "Complete demo checkout";
+  }
 }
 
 function renderBriefRecap() {
@@ -290,10 +359,26 @@ function showDemoStep(step) {
   stepHeading.replaceChildren(document.createTextNode(heading));
   const note = document.createElement("span");
   note.className = "sr-only";
-  note.textContent = " This is a demo. Nothing will be charged.";
+  if (CHECKOUT_MODE === "test") {
+    note.textContent = " Test mode. No real card is charged.";
+  } else if (CHECKOUT_MODE === "live") {
+    note.textContent = " Payment is handled by our payment provider.";
+  } else {
+    note.textContent = " This is a demo. Nothing will be charged.";
+  }
   stepHeading.append(note);
-  document.getElementById("demo-title-em").textContent =
-    step === "done" ? "confirmation" : "checkout";
+  const lead = document.getElementById("demo-title-lead");
+  const emphasis = document.getElementById("demo-title-em");
+  if (CHECKOUT_MODE === "live") {
+    lead.textContent = step === "done" ? "Payment" : "Checkout";
+    emphasis.textContent = "";
+  } else if (CHECKOUT_MODE === "test") {
+    lead.textContent = "Test";
+    emphasis.textContent = step === "done" ? "confirmation" : "checkout";
+  } else {
+    lead.textContent = "Demo";
+    emphasis.textContent = step === "done" ? "confirmation" : "checkout";
+  }
   if (step === "review") {
     syncPlanUI();
     renderBriefRecap();
@@ -384,7 +469,12 @@ demoCheckout.querySelectorAll("[data-back]").forEach((button) => {
 
 document.getElementById("demo-complete").addEventListener("click", (event) => {
   event.preventDefault();
-  showDemoStep("done");
+  const url = CHECKOUT_MODE === "demo" ? "" : CHECKOUT_URLS[demoPlan];
+  if (!url) {
+    showDemoStep("done");
+    return;
+  }
+  window.location.assign(url);
 });
 
 document.getElementById("demo-close").addEventListener("click", (event) => {

@@ -234,9 +234,16 @@
             <i class="mark" aria-hidden="true"></i>
             <span>Web <em>development</em></span>
           </h2>
-          <p class="demo-notice">
+          <p class="demo-notice demo-only">
             <strong>Demo</strong>
             <span>This is a demo. Nothing will be charged.</span>
+          </p>
+          <p class="demo-notice test-notice" hidden>
+            <strong>Test</strong>
+            <span
+              >Test mode: payments use the provider’s test environment. No real
+              card is charged. Use your provider’s test card.</span
+            >
           </p>
           <p class="lede">
             Two fixed-price plans for a small-business or portfolio site.
@@ -628,9 +635,16 @@
 
           <div class="plans-block" id="plan-trust">
             <h3 class="block-title">Before you <em>start</em></h3>
-            <p class="demo-notice">
+            <p class="demo-notice demo-only">
               <strong>Demo</strong>
               <span>This is a demo. Nothing will be charged.</span>
+            </p>
+            <p class="demo-notice test-notice" hidden>
+              <strong>Test</strong>
+              <span
+                >Test mode: payments use the provider’s test environment. No
+                real card is charged. Use your provider’s test card.</span
+              >
             </p>
             <p>
               I have 4+ years of experience building web applications.
@@ -790,9 +804,16 @@
     >
       <div class="checkout-card">
         <div class="checkout-head">
-          <p class="demo-notice" id="demo-checkout-notice">
+          <p class="demo-notice demo-only" id="demo-checkout-notice">
             <strong>Demo</strong>
             <span>This is a demo. Nothing will be charged.</span>
+          </p>
+          <p class="demo-notice test-notice" id="checkout-test-notice" hidden>
+            <strong>Test</strong>
+            <span
+              >Test mode: payments use the provider’s test environment. No real
+              card is charged. Use your provider’s test card.</span
+            >
           </p>
           <div class="checkout-head-row">
             <h2 class="checkout-title" id="demo-checkout-title" tabindex="-1">
@@ -855,6 +876,10 @@
           <p class="checkout-lead">
             On a live project I would ask for this before work starts. Nothing
             you type is sent or stored. There is no file upload.
+          </p>
+          <p class="checkout-lead" id="brief-checkout-note" hidden>
+            Nothing on this page is sent. Include your project details in
+            checkout if it asks for them, or reply to the confirmation email.
           </p>
           <div class="demo-field">
             <label for="demo-name">Name (required)</label>
@@ -949,7 +974,7 @@
         </div>
 
         <div data-step="review" class="checkout-step" hidden>
-          <p class="checkout-lead">
+          <p class="checkout-lead demo-only">
             This is a demo. Nothing will be charged.
           </p>
           <dl class="summary">
@@ -962,14 +987,20 @@
               <dd id="demo-review-price"></dd>
             </div>
             <div>
-              <dt>Demo total</dt>
+              <dt id="demo-total-label">Demo total</dt>
               <dd id="demo-review-total"></dd>
             </div>
           </dl>
           <p class="checkout-lead">
             On a real project: 50% deposit to book the start date, 50% at
             launch, before the site goes live on your domain. The total is the
-            same either way. This demo collects no payment.
+            same either way.
+            <span class="demo-only">This demo collects no payment.</span>
+          </p>
+          <p class="checkout-lead" id="live-pay-note" hidden>
+            You pay 50% now to book your start date. The remaining 50% is
+            invoiced at launch. Payment is handled securely by our payment
+            provider; card details never touch this site.
           </p>
           <p class="list-label">Brief, still on this page only</p>
           <dl class="summary" id="demo-brief-recap"></dl>

@@ -5,6 +5,16 @@
 [build.environment]
   NODE_VERSION = "22"
 
+[[redirects]]
+  from = "/checkout/success"
+  to = "/checkout/success.html"
+  status = 200
+
+[[redirects]]
+  from = "/checkout/cancel"
+  to = "/checkout/cancel.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
