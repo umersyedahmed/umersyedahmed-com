@@ -689,14 +689,18 @@ button.btn {
 }
 
 .compare-wrap {
-  overflow-x: auto;
   max-width: 100%;
 }
 
 .compare {
   width: 100%;
-  min-width: 40rem;
+  table-layout: fixed;
   border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.compare-cat {
+  width: 34%;
 }
 
 .compare caption {
@@ -709,26 +713,51 @@ button.btn {
 
 .compare th,
 .compare td {
-  padding: 0.75rem 0.7rem;
+  padding: 0.8rem 0.65rem;
   border-bottom: 1px solid var(--line);
-  vertical-align: top;
-  text-align: left;
+  vertical-align: middle;
+  font-size: 1rem;
   font-weight: 460;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .compare thead th {
-  font-size: 0.78rem;
   font-weight: 650;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
+  text-align: center;
 }
 
+.compare thead th:first-child,
 .compare tbody th {
-  width: 9.5rem;
+  text-align: left;
   color: var(--ink);
   font-weight: 560;
+}
+
+.compare td {
+  text-align: center;
+}
+
+.compare tr.is-shared th,
+.compare tr.is-shared td {
+  background: #f8f1e8;
+}
+
+.compare td a,
+.compare-footnote a {
+  color: var(--copper-deep);
+  font-style: italic;
+  font-weight: 560;
+}
+
+.compare-footnote {
+  margin: 0.8rem 0 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.4;
 }
 
 .steps {
@@ -1378,64 +1407,10 @@ body.on-dark .top-nav {
     scroll-margin-top: 6.5rem;
   }
 
-  .compare {
-    min-width: 0;
-  }
-
-  .compare thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  .compare tr {
-    display: grid;
-    gap: 0.35rem;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--line);
-  }
-
   .compare th,
   .compare td {
-    display: block;
-    width: auto;
-    border: 0;
-    padding: 0.1rem 0;
-  }
-
-  .compare tbody th {
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .compare td::before {
-    display: block;
-    margin-bottom: 0.15rem;
-    color: var(--copper-deep);
-    font-size: 0.72rem;
-    font-weight: 650;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .compare td:nth-child(2)::before {
-    content: "Simpler web-development plan";
-  }
-
-  .compare td:nth-child(3)::before {
-    content: "More advanced plan";
-  }
-
-  .compare td[colspan]::before {
-    content: "Both plans";
+    padding: 0.55rem 0.3rem;
+    font-size: 0.82rem;
   }
 
   .checkout-actions .btn {
