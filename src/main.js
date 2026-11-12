@@ -209,8 +209,11 @@ const CHECKOUT_MODE = resolveCheckoutMode();
 function applyCheckoutMode() {
   if (CHECKOUT_MODE === "demo") return;
   document.querySelectorAll("[data-checkout-cta]").forEach((el) => {
-    el.textContent =
-      CHECKOUT_MODE === "test" ? "Start test checkout" : "Start checkout";
+    if (import.meta.env.VITE_CHECKOUT_MODE === "test") {
+      el.textContent = CHECKOUT_MODE === "test" ? "Start test checkout" : "Start demo checkout";
+    } else if (import.meta.env.VITE_CHECKOUT_MODE === "live") {
+      el.textContent = "Start checkout";
+    }
   });
   document.querySelectorAll(".demo-only").forEach((el) => {
     el.hidden = true;
@@ -314,10 +317,16 @@ function syncPlanUI() {
   if (totalLabel) totalLabel.textContent = CHECKOUT_MODE === "demo" ? "Demo total" : "Total";
   const complete = document.getElementById("demo-complete");
   if (!complete) return;
-  if (CHECKOUT_MODE === "test") {
-    complete.textContent = `Pay ${plan.deposit} deposit (test)`;
-  } else if (CHECKOUT_MODE === "live") {
-    complete.textContent = `Pay ${plan.deposit} deposit`;
+  if (import.meta.env.VITE_CHECKOUT_MODE === "test") {
+    complete.textContent =
+      CHECKOUT_MODE === "test"
+        ? `Pay ${plan.deposit} deposit (test)`
+        : "Complete demo checkout";
+  } else if (import.meta.env.VITE_CHECKOUT_MODE === "live") {
+    complete.textContent =
+      CHECKOUT_MODE === "live"
+        ? `Pay ${plan.deposit} deposit`
+        : "Complete demo checkout";
   } else {
     complete.textContent = "Complete demo checkout";
   }
@@ -363,9 +372,9 @@ function showDemoStep(step) {
   stepHeading.replaceChildren(document.createTextNode(heading));
   const note = document.createElement("span");
   note.className = "sr-only";
-  if (CHECKOUT_MODE === "test") {
+  if (import.meta.env.VITE_CHECKOUT_MODE === "test" && CHECKOUT_MODE === "test") {
     note.textContent = " Test checkout. No real charges.";
-  } else if (CHECKOUT_MODE === "live") {
+  } else if (import.meta.env.VITE_CHECKOUT_MODE === "live" && CHECKOUT_MODE === "live") {
     note.textContent = " Payment is handled by our payment provider.";
   } else {
     note.textContent = " This is a demo. Nothing will be charged.";
@@ -373,15 +382,18 @@ function showDemoStep(step) {
   stepHeading.append(note);
   const lead = document.getElementById("demo-title-lead");
   const emphasis = document.getElementById("demo-title-em");
-  if (CHECKOUT_MODE === "live") {
-    lead.textContent = step === "done" ? "Payment" : "Checkout";
+  if (import.meta.env.VITE_CHECKOUT_MODE === "test" && CHECKOUT_MODE === "test") {
+    lead.textContent = "Test checkout";
     emphasis.textContent = "";
-  } else if (CHECKOUT_MODE === "test") {
-    lead.textContent = "Test";
-    emphasis.textContent = step === "done" ? "confirmation" : "checkout";
+    document.title = "Test checkout · Umer Ahmed";
+  } else if (import.meta.env.VITE_CHECKOUT_MODE === "live" && CHECKOUT_MODE === "live") {
+    lead.textContent = "Checkout";
+    emphasis.textContent = "";
+    document.title = "Checkout · Umer Ahmed";
   } else {
     lead.textContent = "Demo";
     emphasis.textContent = step === "done" ? "confirmation" : "checkout";
+    document.title = "Demo checkout · Umer Ahmed";
   }
   if (step === "review") {
     syncPlanUI();
@@ -404,9 +416,44 @@ function setInert(on) {
     });
 }
 
+function restoreBrief() {
+  const raw = sessionStorage.getItem("checkout-brief");
+  if (!raw) return;
+  let saved;
+  try {
+    saved = JSON.parse(raw);
+  } catch {
+    return;
+  }
+  const fields = {
+    name: "demo-name",
+    email: "demo-email",
+    business: "demo-business",
+    work: "demo-work",
+    audience: "demo-audience",
+    action: "demo-action",
+    pages: "demo-pages",
+    links: "demo-links",
+    brand: "demo-brand",
+    outside: "demo-outside",
+  };
+  Object.entries(fields).forEach(([key, id]) => {
+    const input = document.getElementById(id);
+    if (input && !input.value && saved[key]) input.value = saved[key];
+  });
+  ["domain", "hosting"].forEach((key) => {
+    if (!saved[key]) return;
+    const radio = demoCheckout.querySelector(
+      `input[name="demo-${key}"][value="${saved[key]}"]`,
+    );
+    if (radio) radio.checked = true;
+  });
+}
+
 function openDemoCheckout(plan, opener) {
   demoPlan = PLAN_COPY[plan] ? plan : "simpler";
   demoOpener = opener || null;
+  restoreBrief();
   syncPlanUI();
   demoCheckout.hidden = false;
   document.body.classList.add("checkout-open");
@@ -414,15 +461,23 @@ function openDemoCheckout(plan, opener) {
   showDemoStep("plan");
 }
 
-function closeDemoCheckout() {
-  clearBrief();
+const pageTitle = document.title;
+
+function closeCheckoutUi() {
   demoCheckout.hidden = true;
   document.body.classList.remove("checkout-open");
   setInert(false);
+  document.title = pageTitle;
   const opener = demoOpener;
   demoOpener = null;
-  demoPlan = "simpler";
   if (opener) opener.focus();
+}
+
+function closeDemoCheckout() {
+  clearBrief();
+  sessionStorage.removeItem("checkout-brief");
+  closeCheckoutUi();
+  demoPlan = "simpler";
 }
 
 function demoFocusable() {
@@ -471,14 +526,56 @@ demoCheckout.querySelectorAll("[data-back]").forEach((button) => {
   });
 });
 
-document.getElementById("demo-complete").addEventListener("click", (event) => {
+function briefPayload() {
+  return {
+    plan: PLAN_COPY[demoPlan].name,
+    name: demoValue("demo-name"),
+    email: demoValue("demo-email"),
+    business: demoValue("demo-business"),
+    work: demoValue("demo-work"),
+    audience: demoValue("demo-audience"),
+    action: demoValue("demo-action"),
+    pages: demoValue("demo-pages"),
+    links: demoValue("demo-links"),
+    domain: checkedValue("demo-domain"),
+    hosting: checkedValue("demo-hosting"),
+    brand: demoValue("demo-brand"),
+    outside: demoValue("demo-outside"),
+  };
+}
+
+async function sendCheckoutBrief(payload) {
+  const form = document.getElementById("checkout-brief");
+  if (!form) return;
+  const honeypot = form.elements["bot-field"];
+  if (honeypot && honeypot.value.trim()) return;
+  Object.entries(payload).forEach(([key, value]) => {
+    if (form.elements[key]) form.elements[key].value = value;
+  });
+  await fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(form)).toString(),
+  });
+}
+
+document.getElementById("demo-complete").addEventListener("click", async (event) => {
   event.preventDefault();
   const url = CHECKOUT_MODE === "demo" ? "" : CHECKOUT_URLS[demoPlan];
   if (!url) {
     showDemoStep("done");
     return;
   }
-  window.location.assign(url);
+  const payload = briefPayload();
+  sessionStorage.setItem("checkout-brief", JSON.stringify(payload));
+  try {
+    await sendCheckoutBrief(payload);
+  } catch {
+    // The brief stays in this tab. Payment still opens.
+  }
+  const target = new URL(url);
+  if (payload.email) target.searchParams.set("prefilled_email", payload.email);
+  window.location.assign(target.toString());
 });
 
 document.getElementById("demo-close").addEventListener("click", (event) => {
@@ -515,4 +612,37 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-window.addEventListener("pagehide", clearBrief);
+window.addEventListener("pageshow", () => {
+  if (!demoCheckout.hidden) closeCheckoutUi();
+});
+
+const menuButton = document.querySelector(".menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+if (menuButton && mobileMenu) {
+  menuButton.addEventListener("click", () => {
+    const open = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!open));
+    menuButton.textContent = open ? "Menu" : "Close";
+    document.querySelector(".top-nav").classList.toggle("is-open", !open);
+  });
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "Menu";
+      document.querySelector(".top-nav").classList.remove("is-open");
+    });
+  });
+}
+
+function removeNetlifyHud() {
+  document
+    .querySelectorAll(
+      "#netlify-drawer, [data-netlify-hud], script[src*='netlify/scripts/hud']",
+    )
+    .forEach((el) => el.remove());
+}
+removeNetlifyHud();
+new MutationObserver(removeNetlifyHud).observe(document.documentElement, {
+  childList: true,
+  subtree: true,
+});

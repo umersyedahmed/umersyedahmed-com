@@ -669,8 +669,63 @@ h1 em {
   flex: none;
 }
 
-.plan .btn {
-  margin-top: auto;
+.deposit-line {
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.project-card {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.2rem 1.2rem;
+  background: #fffdf9;
+  box-shadow: 0 18px 40px rgba(40, 28, 16, 0.1);
+}
+
+.project-card h3 {
+  margin: 0.2rem 0 0.45rem;
+  font-size: 1.8rem;
+  font-weight: 560;
+  letter-spacing: -0.03em;
+}
+
+.project-card p:last-child {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.hero-cta {
+  margin: 0;
+}
+
+.hero-cta .btn {
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+}
+
+.footer-links a {
+  color: #d7b48a;
+  font-style: italic;
+}
+
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  min-height: 44px;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(28, 24, 20, 0.22);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
 
 a.btn,
@@ -1349,13 +1404,39 @@ body.on-dark .top-nav {
     border-bottom: 1px solid var(--line);
   }
 
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-right: 1rem;
+  }
+
   .top-brand {
     display: flex;
     align-items: center;
     gap: 0.55rem;
-    padding: 0.75rem 1.1rem 0;
+    padding: 0.75rem 0 0 1.1rem;
     font-size: 0.95rem;
     font-weight: 650;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  html.js .top-nav nav {
+    display: none;
+  }
+
+  html.js .top-nav.is-open nav {
+    display: block;
+  }
+
+  .top-nav.is-open ul {
+    flex-direction: column;
+    overflow: visible;
+    padding-bottom: 0.8rem;
   }
 
   .top-brand img {

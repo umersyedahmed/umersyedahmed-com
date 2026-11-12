@@ -9,16 +9,135 @@
     />
     <meta name="theme-color" content="#F5F1E9" />
     <title>Umer Ahmed · Full stack web developer</title>
+    <link rel="canonical" href="https://www.umersyedahmed.com/" />
+    <!--noindex-->
+    <meta property="og:title" content="Umer Ahmed · Full stack web developer" />
+    <meta
+      property="og:description"
+      content="Umer Ahmed is a full stack web developer. He builds web applications with TypeScript, Angular, and Node.js."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.umersyedahmed.com/" />
+    <meta property="og:image" content="https://www.umersyedahmed.com/headshot.jpeg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Umer Ahmed · Full stack web developer" />
+    <meta
+      name="twitter:description"
+      content="Umer Ahmed is a full stack web developer. He builds web applications with TypeScript, Angular, and Node.js."
+    />
+    <meta name="twitter:image" content="https://www.umersyedahmed.com/headshot.jpeg" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <script>
       document.documentElement.classList.add("js");
+      (function () {
+        var host = location.hostname;
+        if (host === "www.umersyedahmed.com" || host === "umersyedahmed.com") return;
+        if (/\.netlify\.(app|live)$/.test(host)) {
+          var meta = document.createElement("meta");
+          meta.name = "robots";
+          meta.content = "noindex, nofollow";
+          document.head.appendChild(meta);
+        }
+      })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
+      />
+    </noscript>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.umersyedahmed.com/#website",
+            "url": "https://www.umersyedahmed.com/",
+            "name": "Umer Ahmed",
+            "description": "Full stack web developer.",
+            "publisher": { "@id": "https://www.umersyedahmed.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.umersyedahmed.com/#person",
+            "name": "Umer Ahmed",
+            "url": "https://www.umersyedahmed.com/",
+            "email": "umersyedahmed@gmail.com",
+            "jobTitle": "Full stack web developer",
+            "sameAs": [
+              "https://www.linkedin.com/in/umersyedahmed",
+              "https://github.com/umersyedahmed"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://www.umersyedahmed.com/#service",
+            "name": "Umer Ahmed web development",
+            "url": "https://www.umersyedahmed.com/#plans",
+            "provider": { "@id": "https://www.umersyedahmed.com/#person" },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Web development plans",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "name": "Simpler web-development plan",
+                  "price": "999",
+                  "priceCurrency": "USD",
+                  "url": "https://www.umersyedahmed.com/#plans"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "More advanced plan",
+                  "price": "1999",
+                  "priceCurrency": "USD",
+                  "url": "https://www.umersyedahmed.com/#plans"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.umersyedahmed.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is a domain or hosting included?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The first year of your .com domain and hosting is included. I register the domain, set up hosting, connect the domain and turn on SSL, then transfer both accounts into your name at handover. After year one, you renew the domain on your own Namecheap account at the then-current .com renewal price, which is $20.18 today including the ICANN fee. Hosting for these sites stays free on the plan I use unless the site outgrows it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How would payment work on a real project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "50% deposit to book the start date, 50% at launch, before the site goes live on your domain. The total is the same either way."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a project take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Simpler takes less than 2 weeks. More advanced takes less than 4 weeks. The clock starts once the deposit is paid and your text, logo and photos are in."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
@@ -38,11 +157,21 @@
     <p class="meta-rail">Full stack developer · TypeScript · Angular · Node.js</p>
 
     <header class="top-nav">
-      <p class="top-brand">
-        <img src="/logo.jpg" alt="" width="28" height="28" />
-        Umer Ahmed
-      </p>
-      <nav aria-label="Sections">
+      <div class="top-bar">
+        <p class="top-brand">
+          <img src="/logo.jpg" alt="" width="28" height="28" />
+          Umer Ahmed
+        </p>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          Menu
+        </button>
+      </div>
+      <nav id="mobile-menu" aria-label="Sections">
         <ul>
           <li><a class="section-link" href="#intro" aria-current="true">Intro</a></li>
           <li><a class="section-link" href="#about">About</a></li>
@@ -66,7 +195,7 @@
             width="400"
             height="400"
           />
-          <em>Umer</em>
+          <em>Umer</em>,
           <br />
           a
           <span class="shot shot-code" aria-hidden="true"></span>
@@ -93,6 +222,9 @@
             >GitHub</a
           >
         </p>
+        <p class="hero-cta">
+          <a class="btn btn-ink" href="#plans">See plans &amp; pricing</a>
+        </p>
       </section>
 
       <section id="about" class="section">
@@ -113,13 +245,21 @@
                 other developers can read and maintain.
               </p>
               <p>
-                I am currently building Qissati, an AI-powered Arabic vocabulary
-                app. Qissati uses AI to generate short
-                stories from a learner’s saved vocabulary, and then suggests new
-                words after every story. The backend is Node.js and MongoDB. I
-                designed the brand and wordmark.
+                I am currently building Qisatti, an AI-powered Arabic vocabulary
+                app. It is still in progress.
               </p>
             </div>
+            <article class="project-card">
+              <p class="flag">In progress</p>
+              <h3>Qisatti</h3>
+              <p>
+                An Arabic vocabulary app. Qisatti writes a short story from the
+                learner’s saved words, then suggests new words after each
+                story. The backend is Node.js and MongoDB. I am also designing
+                the brand and wordmark. It is not finished, and it is not a
+                client project.
+              </p>
+            </article>
           </div>
           <div class="collage">
             <figure class="frame frame-a">
@@ -259,6 +399,7 @@
                 get inquiries.
               </p>
               <p class="price">$999</p>
+              <p class="deposit-line">50% to start: $499.50</p>
               <p class="price-note">
                 Comparable 5-page sites typically run about $1,200.
               </p>
@@ -281,6 +422,7 @@
                 can update themselves, and online booking.
               </p>
               <p class="price">$1,999</p>
+              <p class="deposit-line">50% to start: $999.50</p>
               <p class="price-note">
                 Comparable 10-page sites with a blog and booking typically run
                 about $2,500.
@@ -510,9 +652,9 @@
               <li>Extra revision round: $100</li>
               <li>Blog or CMS on the Simpler plan: $250</li>
               <li>Booking integration on the Simpler plan: $150</li>
-              <li>Other work: $75/hour, quoted first</li>
+              <li>Other work, billed hourly: $75/hour, quoted first</li>
               <li>
-                Optional care plan: $75/month, cancel anytime. Minor updates,
+                Monthly care plan: $75/month, cancel anytime. Minor updates,
                 dependency and security updates, uptime monitoring and backups.
                 The site stays yours and stays up if you skip it.
               </li>
@@ -602,8 +744,8 @@
                 <p>
                   Support after launch is 30 days on Simpler and 60 days on
                   More advanced. It covers bug fixes and small text or image
-                  swaps. After that, an optional care plan is $75/month and
-                  cancel anytime. On final payment, you own the finished site:
+                  swaps. After that, a monthly care plan is $75/month and
+                  cancel anytime. It is separate from hourly other work. On final payment, you own the finished site:
                   its code, design and content made for your project, plus your
                   domain and hosting accounts. The site stays yours and stays
                   up if you skip the care plan.
@@ -1075,9 +1217,41 @@
       </div>
     </div>
 
+    <form
+      id="checkout-brief"
+      name="checkout-brief"
+      method="POST"
+      action="/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="checkout-brief" />
+      <p hidden>
+        <label>Leave blank <input name="bot-field" /></label>
+      </p>
+      <input name="plan" />
+      <input name="name" />
+      <input name="email" />
+      <input name="business" />
+      <textarea name="work"></textarea>
+      <textarea name="audience"></textarea>
+      <textarea name="action"></textarea>
+      <textarea name="pages"></textarea>
+      <textarea name="links"></textarea>
+      <input name="domain" />
+      <input name="hosting" />
+      <textarea name="brand"></textarea>
+      <textarea name="outside"></textarea>
+    </form>
+
     <footer class="colophon">
       <img class="logo" src="/logo.jpg" alt="Umer Ahmed" width="40" height="40" />
       <p>© <span data-year>2026</span> Umer Ahmed</p>
+      <p class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </p>
     </footer>
   </body>
 </html>

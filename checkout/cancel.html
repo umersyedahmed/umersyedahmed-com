@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
+    <!--noindex-->
     <title>No payment taken · Umer Ahmed</title>
+    <script>
+      (function () {
+        var host = location.hostname;
+        if (host === "www.umersyedahmed.com" || host === "umersyedahmed.com") return;
+        if (/\.netlify\.(app|live)$/.test(host)) {
+          var meta = document.createElement("meta");
+          meta.name = "robots";
+          meta.content = "noindex, nofollow";
+          document.head.appendChild(meta);
+        }
+      })();
+    </script>
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
