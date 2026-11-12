@@ -593,9 +593,7 @@ document.addEventListener("keydown", (event) => {
   if (demoCheckout.hidden) return;
   if (event.key === "Escape") {
     event.preventDefault();
-    const index = STEP_ORDER.indexOf(demoStep);
-    if (index <= 0 || demoStep === "done") closeDemoCheckout();
-    else showDemoStep(STEP_ORDER[index - 1]);
+    closeDemoCheckout();
     return;
   }
   if (event.key !== "Tab") return;
