@@ -320,12 +320,12 @@ function syncPlanUI() {
   if (import.meta.env.VITE_CHECKOUT_MODE === "test") {
     complete.textContent =
       CHECKOUT_MODE === "test"
-        ? `Pay ${plan.deposit} deposit (test)`
+        ? `Pay ${plan.deposit} first payment (test)`
         : "Complete demo checkout";
   } else if (import.meta.env.VITE_CHECKOUT_MODE === "live") {
     complete.textContent =
       CHECKOUT_MODE === "live"
-        ? `Pay ${plan.deposit} deposit`
+        ? `Pay ${plan.deposit} first payment`
         : "Complete demo checkout";
   } else {
     complete.textContent = "Complete demo checkout";

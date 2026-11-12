@@ -1,17 +1,17 @@
 # Hosted checkout
 
-The site does not collect card numbers and does not load a payment SDK. In test or live mode, the order-review button sends the visitor to a hosted payment link for the 50% deposit. The other half is an invoice from the same provider later, not a second link on this site.
+The site does not collect card numbers and does not load a payment SDK. In test or live mode, the order-review button sends the visitor to a hosted payment link for the first payment, which is due when the plan is purchased. The remaining 50% is an invoice from the same provider at launch, not a second link on this site.
 
 If `VITE_CHECKOUT_MODE` is missing or `demo`, or either deposit URL is missing or not on an allowed host, the button stays **Complete demo checkout** and nothing is charged.
 
 Allowed hosts (https only): `buy.stripe.com`, `checkout.stripe.com`, `square.link`, `checkout.square.site`.
 
-## Create the two deposit links
+## Create the two first-payment links
 
 Make the links in the provider’s test or sandbox environment first. Each link is a one-time charge:
 
-- Simpler plan deposit: **$499.50** (50% of $999)
-- More advanced plan deposit: **$999.50** (50% of $1,999)
+- Simpler plan first payment: **$499.50** (50% of $999), due when purchased
+- More advanced plan first payment: **$999.50** (50% of $1,999), due when purchased
 
 After payment, send the buyer to `https://<site>/checkout/success?plan=simpler` or `https://<site>/checkout/success?plan=advanced`. If the provider asks for a cancel URL, use `https://<site>/checkout/cancel`. Netlify serves `checkout/success.html` and `checkout/cancel.html` at those paths.
 

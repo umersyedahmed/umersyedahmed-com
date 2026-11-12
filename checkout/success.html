@@ -81,10 +81,12 @@
       const key = (plan || "").toLowerCase();
       const line = document.getElementById("plan-line");
       if (key === "simple" || key === "simpler") {
-        line.textContent = "Simpler web-development plan · 50% deposit";
+        line.textContent =
+          "Simpler web-development plan · First payment, due when purchased: $499.50";
         line.hidden = false;
       } else if (key === "advanced") {
-        line.textContent = "More advanced plan · 50% deposit";
+        line.textContent =
+          "More advanced plan · First payment, due when purchased: $999.50";
         line.hidden = false;
       }
     </script>
