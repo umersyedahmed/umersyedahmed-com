@@ -9,16 +9,135 @@
     />
     <meta name="theme-color" content="#F5F1E9" />
     <title>Umer Ahmed · Full stack web developer</title>
+    <link rel="canonical" href="https://www.umersyedahmed.com/" />
+    <!--noindex-->
+    <meta property="og:title" content="Umer Ahmed · Full stack web developer" />
+    <meta
+      property="og:description"
+      content="Umer Ahmed is a full stack web developer. He builds web applications with TypeScript, Angular, and Node.js."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.umersyedahmed.com/" />
+    <meta property="og:image" content="https://www.umersyedahmed.com/headshot.jpeg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Umer Ahmed · Full stack web developer" />
+    <meta
+      name="twitter:description"
+      content="Umer Ahmed is a full stack web developer. He builds web applications with TypeScript, Angular, and Node.js."
+    />
+    <meta name="twitter:image" content="https://www.umersyedahmed.com/headshot.jpeg" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <script>
       document.documentElement.classList.add("js");
+      (function () {
+        var host = location.hostname;
+        if (host === "www.umersyedahmed.com" || host === "umersyedahmed.com") return;
+        if (/\.netlify\.(app|live)$/.test(host)) {
+          var meta = document.createElement("meta");
+          meta.name = "robots";
+          meta.content = "noindex, nofollow";
+          document.head.appendChild(meta);
+        }
+      })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;0,9..144,650;1,9..144,500;1,9..144,600&display=swap"
+      />
+    </noscript>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.umersyedahmed.com/#website",
+            "url": "https://www.umersyedahmed.com/",
+            "name": "Umer Ahmed",
+            "description": "Full stack web developer.",
+            "publisher": { "@id": "https://www.umersyedahmed.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.umersyedahmed.com/#person",
+            "name": "Umer Ahmed",
+            "url": "https://www.umersyedahmed.com/",
+            "email": "umersyedahmed@gmail.com",
+            "jobTitle": "Full stack web developer",
+            "sameAs": [
+              "https://www.linkedin.com/in/umersyedahmed",
+              "https://github.com/umersyedahmed"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://www.umersyedahmed.com/#service",
+            "name": "Umer Ahmed web development",
+            "url": "https://www.umersyedahmed.com/#plans",
+            "provider": { "@id": "https://www.umersyedahmed.com/#person" },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Web development plans",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "name": "Simpler web-development plan",
+                  "price": "999",
+                  "priceCurrency": "USD",
+                  "url": "https://www.umersyedahmed.com/#plans"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "More advanced plan",
+                  "price": "1999",
+                  "priceCurrency": "USD",
+                  "url": "https://www.umersyedahmed.com/#plans"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.umersyedahmed.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is a domain or hosting included?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The first year of your .com domain and hosting is included. I register the domain, set up hosting, connect the domain and turn on SSL, then transfer both accounts into your name at handover. After year one, you renew the domain on your own Namecheap account at the then-current .com renewal price, which is $20.18 today including the ICANN fee. Hosting for these sites stays free on the plan I use unless the site outgrows it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How would payment work on a real project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The first payment is due when the plan is purchased: $499.50 on the Simpler plan, $999.50 on the More advanced plan. The remaining 50% is due at launch, before the site goes live on your domain. The total is the same either way."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a project take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Simpler takes less than 2 weeks. More advanced takes less than 4 weeks. The clock starts once the first payment is paid and your text, logo and photos are in."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
@@ -30,6 +149,7 @@
         <li><a class="section-link" href="#about">About</a></li>
         <li><a class="section-link" href="#experience">Experience</a></li>
         <li><a class="section-link" href="#skills">Skills</a></li>
+        <li><a class="section-link" href="#plans">Plans</a></li>
         <li><a class="section-link" href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -37,16 +157,27 @@
     <p class="meta-rail">Full stack developer · TypeScript · Angular · Node.js</p>
 
     <header class="top-nav">
-      <p class="top-brand">
-        <img src="/logo.jpg" alt="" width="28" height="28" />
-        Umer Ahmed
-      </p>
-      <nav aria-label="Sections">
+      <div class="top-bar">
+        <p class="top-brand">
+          <img src="/logo.jpg" alt="" width="28" height="28" />
+          Umer Ahmed
+        </p>
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          Menu
+        </button>
+      </div>
+      <nav id="mobile-menu" aria-label="Sections">
         <ul>
           <li><a class="section-link" href="#intro" aria-current="true">Intro</a></li>
           <li><a class="section-link" href="#about">About</a></li>
           <li><a class="section-link" href="#experience">Experience</a></li>
           <li><a class="section-link" href="#skills">Skills</a></li>
+          <li><a class="section-link" href="#plans">Plans</a></li>
           <li><a class="section-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -64,7 +195,7 @@
             width="400"
             height="400"
           />
-          <em>Umer</em>
+          <em>Umer</em>,
           <br />
           a
           <span class="shot shot-code" aria-hidden="true"></span>
@@ -91,6 +222,9 @@
             >GitHub</a
           >
         </p>
+        <p class="hero-cta">
+          <a class="btn btn-ink" href="#plans">See plans &amp; pricing</a>
+        </p>
       </section>
 
       <section id="about" class="section">
@@ -112,12 +246,20 @@
               </p>
               <p>
                 I am currently building Qissati, an AI-powered Arabic vocabulary
-                app. Qissati uses AI to generate short
-                stories from a learner’s saved vocabulary, and then suggests new
-                words after every story. The backend is Node.js and MongoDB. I
-                designed the brand and wordmark.
+                app. It is still in progress.
               </p>
             </div>
+            <article class="project-card">
+              <p class="flag">In progress</p>
+              <h3>Qissati</h3>
+              <p>
+                An Arabic vocabulary app. Qissati writes a short story from the
+                learner’s saved words, then suggests new words after each
+                story. The backend is Node.js and MongoDB. I am also designing
+                the brand and wordmark. It is not finished, and it is not a
+                client project.
+              </p>
+            </article>
           </div>
           <div class="collage">
             <figure class="frame frame-a">
@@ -226,6 +368,494 @@
         </div>
       </section>
 
+      <section id="plans" class="section ruled">
+        <div class="sheet">
+          <h2 class="section-title">
+            <i class="mark" aria-hidden="true"></i>
+            <span>Web <em>development</em></span>
+          </h2>
+          <p class="demo-notice demo-only">
+            <strong>Demo</strong>
+            <span>This is a demo. Nothing will be charged.</span>
+          </p>
+          <p class="demo-notice test-notice" hidden>
+            <strong>Test</strong>
+            <span>Test checkout. No real charges. Use Stripe's test card.</span>
+          </p>
+          <p class="lede">
+            Two fixed-price plans for a small-business or portfolio site.
+          </p>
+          <p>
+            The scope, timeline, revisions and support for each plan are listed
+            below. Work outside the plan is quoted before it starts.
+          </p>
+
+          <ul class="plans">
+            <li class="plan">
+              <h3 class="plan-name">Simpler web-development plan</h3>
+              <p class="plan-for">
+                Best for freelancers, consultants and small businesses that
+                need a clean site of up to 5 pages to explain what they do and
+                get inquiries.
+              </p>
+              <p class="price">$999</p>
+              <p class="deposit-line">First payment, due when purchased: $499.50</p>
+              <p class="price-note">
+                Comparable 5-page sites typically run about $1,200.
+              </p>
+              <p class="list-label">Included</p>
+              <ul class="plan-includes">
+                <li>Up to 5 pages (Home, About, Services, Work, Contact)</li>
+                <li>Custom layout styled to your logo, colors and fonts</li>
+                <li>2 revision rounds</li>
+                <li>30 days of support after launch</li>
+              </ul>
+              <button type="button" class="btn btn-ink" data-open-plan="simpler">
+                <span data-checkout-cta>Start demo checkout</span>
+                <span class="sr-only">for the Simpler web-development plan</span>
+              </button>
+            </li>
+            <li class="plan">
+              <h3 class="plan-name">More advanced plan</h3>
+              <p class="plan-for">
+                Best for growing businesses that need more pages, a blog they
+                can update themselves, and online booking.
+              </p>
+              <p class="price">$1,999</p>
+              <p class="deposit-line">First payment, due when purchased: $999.50</p>
+              <p class="price-note">
+                Comparable 10-page sites with a blog and booking typically run
+                about $2,500.
+              </p>
+              <p class="plus">
+                Everything in the Simpler plan, plus up to 10 pages, fully
+                custom design, a blog with an easy editor, one online-booking
+                integration, schema markup and Search Console setup, 3 revision
+                rounds, 60 days of support, and a recorded walkthrough.
+              </p>
+              <p class="list-label">Included</p>
+              <ul class="plan-includes">
+                <li>Up to 10 pages</li>
+                <li>Fully custom design for each page type</li>
+                <li>3 revision rounds</li>
+                <li>60 days of support after launch</li>
+              </ul>
+              <button type="button" class="btn btn-ink" data-open-plan="advanced">
+                <span data-checkout-cta>Start demo checkout</span>
+                <span class="sr-only">for the More advanced plan</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="plans-block" id="plan-comparison">
+            <h3 class="block-title">What’s <em>included</em></h3>
+            <div class="compare-wrap">
+              <table class="compare">
+                <caption>
+                  Simpler web-development plan and More advanced plan.
+                </caption>
+                <colgroup>
+                  <col class="compare-cat" />
+                  <col />
+                  <col />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Category</th>
+                    <th scope="col">
+                      Simpler
+                      <span class="sr-only">web-development plan</span>
+                    </th>
+                    <th scope="col">
+                      More advanced
+                      <span class="sr-only">plan</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Price</th>
+                    <td>$999</td>
+                    <td>$1,999</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Pages</th>
+                    <td>Up to 5</td>
+                    <td>Up to 10</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Design</th>
+                    <td>Styled to your brand</td>
+                    <td>Custom page types</td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Responsive layout</th>
+                    <td colspan="2">Included · Both plans</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">CMS</th>
+                    <td>Add-on ($250)</td>
+                    <td>Included, with blog</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SEO</th>
+                    <td>On-page basics</td>
+                    <td>Basics, schema, Search Console</td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Contact form</th>
+                    <td colspan="2">Included · Both plans</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Booking</th>
+                    <td>Add-on ($150)</td>
+                    <td>Included (1 integration)</td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Copy and images</th>
+                    <td colspan="2">You supply text, logo, and photos · Both plans</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Revisions</th>
+                    <td>2 rounds</td>
+                    <td>3 rounds</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Delivery</th>
+                    <td>Less than 2 weeks</td>
+                    <td>Less than 4 weeks</td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Hosting and domain</th>
+                    <td colspan="2">First year of your .com domain and hosting included · Both plans</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Support</th>
+                    <td>30 days</td>
+                    <td>60 days</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Analytics</th>
+                    <td>GA4 on your account</td>
+                    <td>GA4 plus conversions</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Handover</th>
+                    <td>Your repo and logins</td>
+                    <td>Plus a walkthrough</td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Payment</th>
+                    <td colspan="2">First payment due when purchased, remaining 50% at launch · Both plans</td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Refunds</th>
+                    <td colspan="2">
+                      <a href="#plan-faq">Full terms below</a> · Both plans
+                    </td>
+                  </tr>
+                  <tr class="is-shared">
+                    <th scope="row">Ownership</th>
+                    <td colspan="2">Yours on final payment · Both plans</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="compare-footnote">
+              Extra pages are $125. A revision round is one list of changes.
+              Extra rounds are $100. The clock starts after the first payment and
+              your text, logo, and photos are in. On-page SEO is titles, meta
+              descriptions, headings, alt text, and a sitemap. No ranking
+              guarantees. The contact form is emailed to you, with spam
+              protection.
+              <a href="#plan-faq">Full terms below</a>.
+            </p>
+            <p class="price-note compare-note">
+              Comparable 5-page sites typically run about $1,200. Comparable
+              10-page sites with a blog and booking typically run about $2,500.
+            </p>
+          </div>
+
+          <div class="plans-block" id="plan-process">
+            <h3 class="block-title">How a project would <em>run</em></h3>
+            <p>
+              Simpler takes less than 2 weeks. More advanced takes less than 4 weeks.
+              The clock starts once the first payment is paid and your text, logo and
+              photos are in. Slow feedback moves the date.
+              <span class="demo-only">This demo button does not start the clock.</span>
+              <span class="test-notice" hidden>This test checkout does not start the clock.</span>
+            </p>
+            <ol class="steps">
+              <li>
+                <h4>Brief</h4>
+                <p>
+                  You would share what you do, who the site is for, and which
+                  pages you have in mind.
+                  <span class="demo-only">The clock would not start from this demo button.</span>
+                  <span class="test-notice" hidden>The clock would not start from this test checkout.</span>
+                </p>
+              </li>
+              <li>
+                <h4>Plan</h4>
+                <p>
+                  I write down what the build includes and what it does not,
+                  including the page list: up to 5 pages on Simpler, up to 10
+                  on More advanced.
+                </p>
+              </li>
+              <li>
+                <h4>Build</h4>
+                <p>
+                  I build the agreed pages and check them on a phone, tablet
+                  and desktop. The homepage design is approved before the
+                  build. On the More advanced plan, inner-page designs are
+                  approved first too.
+                </p>
+              </li>
+              <li>
+                <h4>Review</h4>
+                <p>
+                  You review the work and send one consolidated list of changes
+                  within the agreed scope. Simpler includes 2 rounds. More
+                  advanced includes 3. Extra rounds are $100 each.
+                </p>
+              </li>
+              <li>
+                <h4>Launch and handover</h4>
+                <p>
+                  The site goes live, then I hand it over. On final payment,
+                  you own the finished site: its code, design and content made
+                  for your project, plus your domain and hosting accounts.
+                  Support after launch is 30 days on Simpler and 60 days on
+                  More advanced.
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="plans-block" id="plan-exclusions">
+            <h3 class="block-title">What is <em>not</em> included</h3>
+            <p>
+              Not included in either plan: online stores, custom web apps,
+              client portals or logins, logo or brand-identity design, writing
+              all copy from scratch, photography, ongoing SEO or ads, and
+              third-party fees (paid fonts or plugins, booking-tool
+              subscriptions). After the first year, you pay to renew the
+              domain. Any of these can be quoted separately.
+            </p>
+          </div>
+
+          <div class="plans-block" id="plan-addons">
+            <h3 class="block-title"><em>Add-ons</em></h3>
+            <ul class="addon-list">
+              <li>Extra page: $125</li>
+              <li>Extra revision round: $100</li>
+              <li>Blog or CMS on the Simpler plan: $250</li>
+              <li>Booking integration on the Simpler plan: $150</li>
+              <li>Other work, billed hourly: $75/hour, quoted first</li>
+              <li>
+                Monthly care plan: $75/month, cancel anytime. Minor updates,
+                dependency and security updates, uptime monitoring and backups.
+                The site stays yours and stays up if you skip it.
+              </li>
+            </ul>
+          </div>
+
+          <div class="plans-block" id="plan-faq">
+            <h3 class="block-title"><em>Questions</em></h3>
+            <div class="faq">
+              <details>
+                <summary>What is in each plan?</summary>
+                <p>
+                  Simpler web-development plan is $999: up to 5 pages, a
+                  custom layout, 2 revision rounds and 30 days of support. More
+                  advanced plan is $1,999. It includes everything in the
+                  Simpler plan, plus up to 10 pages, fully custom design, a
+                  blog with an easy editor, one online-booking integration,
+                  schema markup and Search Console setup, 3 revision rounds, 60
+                  days of support, and a recorded walkthrough. The comparison
+                  table has the full list.
+                </p>
+              </details>
+              <details>
+                <summary>How long does a project take?</summary>
+                <p>
+                  Simpler takes less than 2 weeks. More advanced takes less
+                  than 4 weeks. The clock starts once the first payment is paid and your
+                  text, logo and photos are in. Slow feedback moves the date.
+                </p>
+              </details>
+              <details>
+                <summary>Who provides the copy and images?</summary>
+                <p>
+                  You supply the text, logo and photos. I place them, format
+                  them and lightly edit them for clarity and length. The More
+                  advanced plan includes a polish pass on all copy. Writing all
+                  copy from scratch, logo design and photography are not
+                  included and can be quoted.
+                </p>
+              </details>
+              <details>
+                <summary>Is a domain or hosting included?</summary>
+                <p>
+                  The first year of your .com domain and hosting is included. I
+                  register the domain, set up hosting, connect the domain and
+                  turn on SSL, then transfer both accounts into your name at
+                  handover. After year one, you renew the domain on your own
+                  Namecheap account at the then-current .com renewal price,
+                  which is $20.18 today including the ICANN fee. Hosting for
+                  these sites stays free on the plan I use unless the site
+                  outgrows it.
+                </p>
+              </details>
+              <details>
+                <summary>How many revisions are included?</summary>
+                <p>
+                  Simpler includes 2 rounds. More advanced includes 3. A round
+                  is one consolidated list of changes within the agreed scope.
+                  Extra rounds are $100 each.
+                </p>
+              </details>
+              <details>
+                <summary>How would payment work on a real project?</summary>
+                <p>
+                  The first payment is due when the plan is purchased: $499.50
+                  on the Simpler plan, $999.50 on the More advanced plan. The
+                  remaining 50% is due at launch, before the site goes live on
+                  your domain. The total is the same either way.
+                  <span class="demo-only">This demo collects no payment.</span>
+                  <span class="test-notice" hidden
+                    >This is a test checkout. No real charges happen. Use
+                    Stripe's test card.</span
+                  >
+                </p>
+              </details>
+              <details>
+                <summary>What is not included?</summary>
+                <p>
+                  Not included in either plan: online stores, custom web apps,
+                  client portals or logins, logo or brand-identity design,
+                  writing all copy from scratch, photography, ongoing SEO or
+                  ads, and third-party fees. Any of these can be quoted
+                  separately.
+                </p>
+              </details>
+              <details>
+                <summary>What happens after launch?</summary>
+                <p>
+                  Support after launch is 30 days on Simpler and 60 days on
+                  More advanced. It covers bug fixes and small text or image
+                  swaps. After that, a monthly care plan is $75/month and
+                  cancel anytime. It is separate from hourly other work. On final payment, you own the finished site:
+                  its code, design and content made for your project, plus your
+                  domain and hosting accounts. The site stays yours and stays
+                  up if you skip the care plan.
+                </p>
+              </details>
+              <details>
+                <summary>What if I need a refund?</summary>
+                <p>
+                  Cancel before work starts: full refund of the first payment.
+                  After work starts, the first payment covers the work done and
+                  is not refunded,
+                  nothing more is owed, and you get the work done so far. If I
+                  cannot deliver the agreed scope, you get a full refund. No
+                  refunds after launch and sign-off.
+                  <span class="demo-only"
+                    >This demo places no order and charges nothing, so no refund
+                    applies.</span
+                  >
+                  <span class="test-notice" hidden
+                    >This is a test checkout. No real charges happen. Use
+                    Stripe's test card.</span
+                  >
+                </p>
+              </details>
+              <details>
+                <summary>How do I start?</summary>
+                <p>
+                  <span class="demo-only"
+                    >Choose a plan and open the demo checkout. You can switch
+                    plans, fill a brief, and review it. Nothing is charged, and
+                    the brief is not sent.</span
+                  >
+                  <span class="test-notice" hidden
+                    >Choose a plan and open the test checkout. You can switch
+                    plans, fill a brief, and review it. This is a test checkout.
+                    No real charges happen. Use Stripe's test card. The brief is
+                    not sent.</span
+                  >
+                  For a real conversation, use the contact form below.
+                </p>
+              </details>
+              <details>
+                <summary>Is this checkout a real purchase?</summary>
+                <p>
+                  <span class="demo-only"
+                    >No. This is a demo. Nothing will be charged. No real order
+                    is placed, and nothing is stored or sent.</span
+                  >
+                  <span class="test-notice" hidden
+                    >This is a test checkout. No real charges happen. Use
+                    Stripe's test card.</span
+                  >
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <div class="plans-block" id="plan-trust">
+            <h3 class="block-title">Before you <em>start</em></h3>
+            <p class="demo-notice demo-only">
+              <strong>Demo</strong>
+              <span>This is a demo. Nothing will be charged.</span>
+            </p>
+            <p class="demo-notice test-notice" hidden>
+              <strong>Test</strong>
+              <span>Test checkout. No real charges. Use Stripe's test card.</span>
+            </p>
+            <p>
+              I have 4+ years of experience building web applications.
+            </p>
+            <p class="langs">
+              TypeScript, Angular, Node.js, NestJS, MongoDB, Netlify, and
+              Google Cloud.
+            </p>
+            <ul class="social trust-links">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/umersyedahmed"
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  >LinkedIn</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/umersyedahmed"
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+            <p>
+              On final payment, you own the finished site: its code, design and
+              content made for your project, plus your domain and hosting
+              accounts. Third-party pieces stay under their own licenses. I may
+              show the site in my portfolio unless you ask me not to.
+            </p>
+          </div>
+
+          <noscript>
+            <p class="noscript-note">
+              The demo checkout needs JavaScript. Nothing is charged either
+              way.
+            </p>
+          </noscript>
+        </div>
+      </section>
+
       <section id="contact" class="contact">
         <div class="contact-inner">
           <h2 class="section-title center">
@@ -329,11 +959,303 @@
           </ul>
         </div>
       </section>
+
     </main>
+
+    <div
+      id="demo-checkout"
+      class="checkout-screen"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="demo-checkout-title"
+      hidden
+    >
+      <div class="checkout-card">
+        <div class="checkout-head">
+          <p class="demo-notice demo-only" id="demo-checkout-notice">
+            <strong>Demo</strong>
+            <span>This is a demo. Nothing will be charged.</span>
+          </p>
+          <p class="demo-notice test-notice" id="checkout-test-notice" hidden>
+            <strong>Test</strong>
+            <span>Test checkout. No real charges. Use Stripe's test card.</span>
+          </p>
+          <div class="checkout-head-row">
+            <h2 class="checkout-title" id="demo-checkout-title" tabindex="-1">
+              <span id="demo-title-lead">Demo</span>
+              <em id="demo-title-em">checkout</em>
+            </h2>
+            <button type="button" class="text-link" id="demo-close">Close</button>
+          </div>
+          <p class="step-kicker" id="demo-kicker">Step 1 of 4</p>
+          <h3 id="demo-step-heading" tabindex="-1">
+            Plan summary
+            <span class="sr-only">This is a demo. Nothing will be charged.</span>
+          </h3>
+        </div>
+
+        <div data-step="plan" class="checkout-step">
+          <fieldset class="choice-set">
+            <legend>Plan</legend>
+            <label class="choice">
+              <input type="radio" name="demo-plan-choice" value="simpler" />
+              <span>
+                <span class="choice-name">Simpler web-development plan</span>
+                <span class="choice-price">$999</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="demo-plan-choice" value="advanced" />
+              <span>
+                <span class="choice-name">More advanced plan</span>
+                <span class="choice-price">$1,999</span>
+              </span>
+            </label>
+          </fieldset>
+          <p class="list-label">Included</p>
+          <ul class="plan-includes" data-inclusions="simpler">
+            <li>Up to 5 pages</li>
+            <li>Custom layout styled to your logo, colors and fonts</li>
+            <li>2 revision rounds</li>
+            <li>30 days of support after launch</li>
+          </ul>
+          <ul class="plan-includes" data-inclusions="advanced" hidden>
+            <li>Up to 10 pages</li>
+            <li>Fully custom design for each page type</li>
+            <li>3 revision rounds</li>
+            <li>60 days of support after launch</li>
+          </ul>
+          <p class="plus" id="demo-plus" hidden>
+            Everything in the Simpler plan, plus a blog with an easy editor,
+            one online-booking integration, schema markup and Search Console
+            setup, and a recorded walkthrough.
+          </p>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-ink" data-next="brief">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <div data-step="brief" class="checkout-step" hidden>
+          <p class="checkout-lead">
+            On a live project I would ask for this before work starts. Nothing
+            you type is sent or stored. There is no file upload.
+          </p>
+          <p class="checkout-lead" id="brief-checkout-note" hidden>
+            Nothing on this page is sent. Include your project details in
+            checkout if it asks for them, or reply to the confirmation email.
+          </p>
+          <div class="demo-field">
+            <label for="demo-name">Name (required)</label>
+            <input id="demo-name" type="text" autocomplete="name" maxlength="120" />
+            <p class="field-error" id="demo-name-error" hidden></p>
+          </div>
+          <div class="demo-field">
+            <label for="demo-email">Email (required)</label>
+            <input
+              id="demo-email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              maxlength="160"
+            />
+            <p class="field-error" id="demo-email-error" hidden></p>
+          </div>
+          <div class="demo-field">
+            <label for="demo-business">Business or project name (optional)</label>
+            <input id="demo-business" type="text" maxlength="160" />
+          </div>
+          <div class="demo-field">
+            <label for="demo-work">What you do (required)</label>
+            <textarea id="demo-work" rows="3" maxlength="800"></textarea>
+            <p class="field-error" id="demo-work-error" hidden></p>
+          </div>
+          <div class="demo-field">
+            <label for="demo-audience">Who the site is for (optional)</label>
+            <textarea id="demo-audience" rows="2" maxlength="800"></textarea>
+          </div>
+          <div class="demo-field">
+            <label for="demo-action">Main action for a visitor (optional)</label>
+            <textarea id="demo-action" rows="2" maxlength="800"></textarea>
+          </div>
+          <div class="demo-field">
+            <label for="demo-pages">Pages or sections you want (optional)</label>
+            <textarea id="demo-pages" rows="2" maxlength="800"></textarea>
+          </div>
+          <div class="demo-field">
+            <label for="demo-links">Current site or examples (optional)</label>
+            <textarea id="demo-links" rows="2" maxlength="800"></textarea>
+          </div>
+          <fieldset class="choice-set">
+            <legend>Do you already have a domain? (optional)</legend>
+            <label class="choice choice-inline">
+              <input type="radio" name="demo-domain" value="Yes" />
+              <span>Yes</span>
+            </label>
+            <label class="choice choice-inline">
+              <input type="radio" name="demo-domain" value="No" />
+              <span>No</span>
+            </label>
+            <label class="choice choice-inline">
+              <input type="radio" name="demo-domain" value="Not sure" />
+              <span>Not sure</span>
+            </label>
+          </fieldset>
+          <fieldset class="choice-set">
+            <legend>Do you already have hosting? (optional)</legend>
+            <label class="choice choice-inline">
+              <input type="radio" name="demo-hosting" value="Yes" />
+              <span>Yes</span>
+            </label>
+            <label class="choice choice-inline">
+              <input type="radio" name="demo-hosting" value="No" />
+              <span>No</span>
+            </label>
+            <label class="choice choice-inline">
+              <input type="radio" name="demo-hosting" value="Not sure" />
+              <span>Not sure</span>
+            </label>
+          </fieldset>
+          <p class="checkout-lead">
+            The first year of your .com domain and hosting is included. I set
+            both up, then transfer the accounts into your name at handover.
+            After year one, you renew the domain on your own Namecheap account.
+          </p>
+          <div class="demo-field">
+            <label for="demo-brand">Logo or brand notes (optional)</label>
+            <textarea id="demo-brand" rows="2" maxlength="800"></textarea>
+          </div>
+          <div class="demo-field">
+            <label for="demo-outside">Anything outside the plan (optional)</label>
+            <textarea id="demo-outside" rows="2" maxlength="800"></textarea>
+          </div>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-ink" data-next="review">
+              Continue
+            </button>
+            <button type="button" class="text-link" data-back="plan">Back</button>
+          </div>
+        </div>
+
+        <div data-step="review" class="checkout-step" hidden>
+          <p class="checkout-lead demo-only">
+            This is a demo. Nothing will be charged.
+          </p>
+          <p class="checkout-lead test-notice" hidden>
+            Test checkout. No real charges. Use Stripe's test card.
+          </p>
+          <dl class="summary">
+            <div>
+              <dt>Plan</dt>
+              <dd id="demo-review-plan"></dd>
+            </div>
+            <div>
+              <dt>Price</dt>
+              <dd id="demo-review-price"></dd>
+            </div>
+            <div>
+              <dt id="demo-total-label">Demo total</dt>
+              <dd id="demo-review-total"></dd>
+            </div>
+          </dl>
+          <p class="checkout-lead">
+            On a real project, the first payment is due when the plan is
+            purchased, and the remaining 50% is due at launch, before the site
+            goes live on your domain. The total is the same either way.
+            <span class="demo-only">This demo collects no payment.</span>
+            <span class="test-notice" hidden
+              >You pay the first payment now, as a test. It is due when the
+              plan is purchased. The remaining 50% would be invoiced at launch.
+              No real charges happen.</span
+            >
+          </p>
+          <p class="checkout-lead" id="live-pay-note" hidden>
+            You pay the first payment now. It is due when the plan is
+            purchased. The remaining 50% is invoiced at launch. Payment is
+            handled securely by our payment provider; card details never touch
+            this site.
+          </p>
+          <p class="list-label">Brief, still on this page only</p>
+          <dl class="summary" id="demo-brief-recap"></dl>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-ink" id="demo-complete">
+              Complete demo checkout
+            </button>
+            <button type="button" class="text-link" data-back="brief">Back</button>
+          </div>
+        </div>
+
+        <div data-step="done" class="checkout-step" hidden>
+          <p class="confirm-copy" id="demo-confirm-statement" tabindex="-1">
+            This was a demo. Nothing was charged. No real order was placed. No
+            payment details were collected. The brief was not sent or stored.
+          </p>
+          <p class="checkout-echo" id="demo-confirmed-plan"></p>
+          <p class="list-label">What would happen next</p>
+          <ul class="plan-includes">
+            <li>
+              A real project would start by confirming scope. Simpler is up to
+              5 pages. More advanced is up to 10. Extra pages are $125 each.
+            </li>
+            <li>
+              You would supply the text, logo and photos. I would place them,
+              format them and lightly edit them.
+            </li>
+            <li>
+              There would be a review before launch. Simpler includes 2 rounds.
+              More advanced includes 3.
+            </li>
+            <li>
+              Launch and handover would follow. On final payment, you would own
+              the finished site: its code, design and content made for your
+              project, plus your domain and hosting accounts.
+            </li>
+          </ul>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-ink" id="demo-done-close">
+              Back to plans
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form
+      id="checkout-brief"
+      name="checkout-brief"
+      method="POST"
+      action="/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="checkout-brief" />
+      <p hidden>
+        <label>Leave blank <input name="bot-field" /></label>
+      </p>
+      <input name="plan" />
+      <input name="name" />
+      <input name="email" />
+      <input name="business" />
+      <textarea name="work"></textarea>
+      <textarea name="audience"></textarea>
+      <textarea name="action"></textarea>
+      <textarea name="pages"></textarea>
+      <textarea name="links"></textarea>
+      <input name="domain" />
+      <input name="hosting" />
+      <textarea name="brand"></textarea>
+      <textarea name="outside"></textarea>
+    </form>
 
     <footer class="colophon">
       <img class="logo" src="/logo.jpg" alt="Umer Ahmed" width="40" height="40" />
       <p>© <span data-year>2026</span> Umer Ahmed</p>
+      <p class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </p>
     </footer>
   </body>
 </html>

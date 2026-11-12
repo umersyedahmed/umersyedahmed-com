@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <!--noindex-->
+    <title>Thanks · Umer Ahmed</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;1,9..144,520&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f5f1e9;
+        color: #1c1814;
+        font-family: Fraunces, Palatino, "Palatino Linotype", serif;
+        text-align: center;
+        padding: 2rem;
+      }
+      main {
+        max-width: 34rem;
+      }
+      h1 {
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 560;
+        letter-spacing: -0.03em;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #5e564c;
+      }
+      .test-notice {
+        color: #1c1814;
+        border: 1px solid #8c5a38;
+        background: #f3e6d8;
+        padding: 0.85rem 1rem;
+      }
+      a {
+        color: #7a4e32;
+        font-style: italic;
+      }
+    </style>
+    <script>
+      (function () {
+        var host = location.hostname;
+        if (host === "www.umersyedahmed.com" || host === "umersyedahmed.com") return;
+        if (/\.netlify\.(app|live)$/.test(host)) {
+          var meta = document.createElement("meta");
+          meta.name = "robots";
+          meta.content = "noindex, nofollow";
+          document.head.appendChild(meta);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Thanks</h1>
+      <p>I’ll follow up by email.</p>
+      <p id="plan-line" hidden></p>
+      <p class="test-notice">
+        This was a test checkout. No real charges happened.
+      </p>
+      <p>
+        If a payment went through, I’ll email within 1 business day to schedule
+        the kickoff. The remaining 50% is invoiced at launch.
+      </p>
+      <p><a href="/#plans">Back to plans</a></p>
+    </main>
+    <script type="module">
+      const plan = new URLSearchParams(location.search).get("plan");
+      const key = (plan || "").toLowerCase();
+      const line = document.getElementById("plan-line");
+      if (key === "simple" || key === "simpler") {
+        line.textContent =
+          "Simpler web-development plan · First payment, due when purchased: $499.50";
+        line.hidden = false;
+      } else if (key === "advanced") {
+        line.textContent =
+          "More advanced plan · First payment, due when purchased: $999.50";
+        line.hidden = false;
+      }
+    </script>
+  </body>
+</html>
