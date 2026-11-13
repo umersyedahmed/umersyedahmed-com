@@ -10,8 +10,9 @@ function checkoutMode() {
 }
 
 function stripTestNotices(html) {
+  // Source closes some notices as `</span\n>`, so allow whitespace before `>`.
   return html.replace(
-    /<([a-zA-Z0-9]+)(\s[^>]*\btest-notice\b[^>]*)>[\s\S]*?<\/\1>/g,
+    /<([a-zA-Z0-9]+)(\s[^>]*\btest-notice\b[^>]*)>[\s\S]*?<\/\1\s*>/g,
     "",
   );
 }
@@ -33,6 +34,32 @@ function showTestNotices(html) {
   );
 }
 
+const CHECKOUT_FALLBACK = {
+  test: {
+    cta: "Start test checkout",
+    noscript:
+      "The test checkout needs JavaScript. Nothing is charged either way.",
+  },
+  live: {
+    cta: "Start checkout",
+    noscript: "The checkout needs JavaScript.",
+  },
+};
+
+function rewriteCheckoutFallbacks(html, mode) {
+  const copy = CHECKOUT_FALLBACK[mode];
+  if (!copy) return html;
+  return html
+    .replace(
+      /(<span\b[^>]*\bdata-checkout-cta\b[^>]*>)[\s\S]*?(<\/span>)/g,
+      `$1${copy.cta}$2`,
+    )
+    .replace(
+      /The demo checkout needs JavaScript\.\s*Nothing is charged either\s*way\./g,
+      copy.noscript,
+    );
+}
+
 const siteFlags = {
   name: "site-flags",
   transformIndexHtml(html) {
@@ -48,6 +75,7 @@ const siteFlags = {
       out = hideDemoOnly(out);
       out = out.replace('id="live-pay-note" hidden', 'id="live-pay-note"');
     }
+    out = rewriteCheckoutFallbacks(out, mode);
     const noindex =
       process.env.VITE_NOINDEX === "true"
         ? '<meta name="robots" content="noindex, nofollow" />'
